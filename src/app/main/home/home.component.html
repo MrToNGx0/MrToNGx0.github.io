@@ -1,0 +1,35 @@
+<div
+  class="container mx-auto w-full h-full flex justify-center items-center py-5">
+  <div class="flex items-center justify-center gap-5 w-full h-full">
+    <div class="flex justify-center items-center w-2/5">
+      <div
+        class="w-full max-w-[28rem] h-auto aspect-square rounded-full overflow-hidden relative">
+        <img
+          [src]="info.avatar"
+          alt="Profile Picture"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          [class]="class ? class : ''" />
+      </div>
+    </div>
+    <div class="flex flex-col items-center w-3/6 gap-3">
+      <p class="font-extrabold text-gray-700 text-6xl cursor-default">
+        HI, I AM {{ info.nickname | uppercase }}
+      </p>
+      <p class="text-2xl text-gray-600 cursor-default">
+        I am software developer (Full Stack)
+      </p>
+      <p class="text-2xl text-gray-600 cursor-default">
+        based in {{ info.location }}
+      </p>
+      <a
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-white text-gray-700 dark:text-gray-400 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-400 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        [href]="info.resume"
+        target="_blank">
+        <div class="flex text-lg gap-2">
+          <p class="font-medium">Resume</p>
+          <fa-icon [icon]="faLink" class="font-medium"></fa-icon>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm">
+  <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <div class="items-center justify-between w-full flex" id="navbar-language">
+      <ul class="flex gap-8 font-medium py-4 rounded-lg">
+        <ng-container *ngFor="let item of listMenu">
+          <li>
+            <a
+              [routerLink]="[item.routerLink]"
+              routerLinkActive="text-blue-600"
+              class="block rounded hover:text-blue-300"
+              [ngClass]="item.class ? item.class : ''">
+              {{ item.label }}
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="flex items-center">
+      <ng-container *ngIf="isSelectLanguage">
+        <button
+          type="button"
+          data-dropdown-toggle="language-dropdown-menu"
+          class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <img
+            class="h-auto w-8"
+            [src]="isSelectLanguage.linkImage"
+            [alt]="isSelectLanguage.id" />
+        </button>
+      </ng-container>
+      <div
+        class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+        id="language-dropdown-menu">
+        <ul class="py-2 font-medium" role="none">
+          <ng-container *ngFor="let item of language">
+            <li>
+              <a
+                class="block w-40 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem"
+                (click)="onSelectLanguage(item)">
+                <div class="flex justify-start items-center gap-3">
+                  <img
+                    class="h-auto w-8"
+                    [src]="item.linkImage"
+                    [alt]="item.id" />
+                  <p class="">{{ item.label }}</p>
+                </div>
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
