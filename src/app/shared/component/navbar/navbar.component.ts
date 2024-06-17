@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { LanguageService } from 'src/app/core/service/language/language.service';
 import { ListMenu, Language } from '../../interface/laguage.interface';
 
@@ -12,9 +11,6 @@ export class NavbarComponent implements OnInit {
   listMenu!: ListMenu[];
   language!: Language[];
   isSelectLanguage!: Language;
-
-  faSun = faSun;
-  faMoon = faMoon;
 
   constructor(private languageService: LanguageService) {}
 
