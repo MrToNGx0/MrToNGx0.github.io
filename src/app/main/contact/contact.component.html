@@ -1,0 +1,49 @@
+<div class="w-full h-full flex justify-center items-center py-5">
+  <div class="flex flex-col items-center gap-5 w-full h-full">
+    <div
+      class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex flex-col items-center gap-3 p-8">
+        <div
+          class="w-full max-w-[28rem] h-auto aspect-square rounded-full overflow-hidden relative">
+          <img
+            [src]="info.avatar"
+            alt="Profile Picture"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            [class]="class ? class : ''" />
+        </div>
+        <h5
+          class="text-xl font-medium text-gray-900 dark:text-white cursor-default">
+          {{ info.firstName }} {{ info.lastName }}
+        </h5>
+        <p class="text-sm text-gray-500 dark:text-gray-400 cursor-default">
+          {{ info.position }}
+        </p>
+        <div
+          class="flex gap-2 text-gray-500 cursor-pointer duration-300 dark:text-gray-400 hover:text-blue-400"
+          (click)="onClickCopy(info.email)">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+          <p>{{ info.email }}</p>
+        </div>
+        <div
+          class="flex gap-2 text-gray-500 cursor-pointer duration-300 dark:text-gray-400 hover:text-blue-400"
+          (click)="onClickCopy(info.tel)">
+          <fa-icon [icon]="faPhone"></fa-icon>
+          <p>{{ info.tel }}</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <ng-container *ngFor="let social of info.social">
+            <a [href]="social.link" target="_blank">
+              <div
+                class="w-8 h-8 aspect-square rounded-full overflow-hidden shadow-md relative transition-transform duration-500 hover:grayscale-[80]">
+                <img
+                  [src]="social.icon"
+                  alt="{{ social.label }}"
+                  class="absolute inset-0 w-5 h-5 object-cover top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
+              </div>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
