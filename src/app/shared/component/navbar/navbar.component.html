@@ -1,26 +1,45 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm">
-  <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+  <div
+    class="max-w-screen-xl flex items-center justify-between mx-auto p-4 gap-4">
     <div class="items-center justify-between w-full flex" id="navbar-language">
       <ul class="flex gap-8 font-medium py-4 rounded-lg">
         <ng-container *ngFor="let item of listMenu">
           <li>
             <a
               [routerLink]="[item.routerLink]"
-              routerLinkActive="text-blue-600"
-              class="block rounded hover:text-blue-300"
+              class="block rounded hover:text-blue-300 dark:hover:text-blue-200"
+              [class]="item.class"
+              [ngClass]="{
+                'text-gray-700 dark:text-gray-200': !isActive(item.routerLink),
+                'text-blue-600 dark:text-blue-400': isActive(item.routerLink),
+              }"
               [ngClass]="item.class ? item.class : ''">
-              {{ item.label }}
+              {{ item.label | translate }}
             </a>
           </li>
         </ng-container>
       </ul>
     </div>
     <div class="flex items-center">
+      <button
+        type="button"
+        class="inline-flex items-center font-medium justify-center w-10 h-8 text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 hover:opacity-75 dark:hover:bg-gray-700 dark:hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700"
+        (click)="toggleDarkMode()">
+        <fa-icon
+          [icon]="faSun"
+          class="text-xl text-orange-300 block dark:hidden"></fa-icon>
+        <fa-icon
+          [icon]="faMoon"
+          class="text-xl text-blue-300 hidden dark:block"></fa-icon>
+      </button>
+    </div>
+
+    <div class="flex items-center">
       <ng-container *ngIf="isSelectLanguage">
         <button
           type="button"
           data-dropdown-toggle="language-dropdown-menu"
-          class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          class="inline-flex items-center font-medium justify-center w-10 h-8 text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">
           <img
             class="h-auto w-8"
             [src]="isSelectLanguage.linkImage"
@@ -34,7 +53,7 @@
           <ng-container *ngFor="let item of language">
             <li>
               <a
-                class="block w-40 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                class="block w-40 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
                 role="menuitem"
                 tabindex="0"
                 (click)="onSelectLanguage(item)"

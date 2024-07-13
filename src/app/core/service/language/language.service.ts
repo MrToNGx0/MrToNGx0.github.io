@@ -15,11 +15,13 @@ export class LanguageService {
     {
       id: 1,
       label: 'ไทย',
+      value: 'th',
       linkImage: './assets/icon/thailand.png',
     },
     {
       id: 2,
       label: 'English',
+      value: 'en',
       linkImage: './assets/icon/united-kingdom.png',
     },
   ];

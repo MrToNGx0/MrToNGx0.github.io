@@ -1,0 +1,22 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.1s linear;
+  width: 100%;
+  gap: 20px;
+}
+
+.skill-item {
+  min-width: calc(100% / 6);
+}

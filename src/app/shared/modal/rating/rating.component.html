@@ -1,0 +1,22 @@
+<div class="modal-overlay bg-gray-100 dark:bg-gray-600">
+  <div class="modal-content p-5">
+    <p class="text-gray-700 dark:text-gray-200">
+      {{ 'rating.title' | translate }}
+    </p>
+    <ul class="flex items-center justify-center m-5 gap-3">
+      <li
+        *ngFor="let star of stars"
+        [class.active]="star <= currentRate"
+        (mouseover)="hoverStar(star)"
+        (mouseleave)="leaveStar()"
+        (click)="rate(star)"
+        class="cursor-pointer">
+        <fa-icon
+          [icon]="faStar"
+          class="text-3xl text-gray-300"
+          [ngClass]="{ 'text-yellow-300': star <= currentRate }">
+        </fa-icon>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,52 +1,60 @@
-<div
-  class="container mx-auto w-full h-full flex justify-center items-center py-5">
+<div class="container mx-auto flex justify-center items-center py-10">
   <div class="flex flex-col justify-center gap-5">
-    <ng-container *ngIf="info">
+    <ng-container *ngIf="profile">
       <div>
         <h2 class="text-4xl font-bold text-gray-700 dark:text-white mb-5">
           About Me
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-400">
-          My name is {{ info.firstName }} {{ info.lastName }}, but you can call
-          me {{ info.nickname }}. I'm a passionate full-stack software developer
-          based in {{ info.location }}. I love creating dynamic and responsive
-          web applications using modern technologies.
+          My name is {{ profile.firstName }} {{ profile.lastName }}, but you can
+          call me {{ profile.nickname }}. I'm a passionate full-stack software
+          developer based in {{ profile.location }}. I love creating dynamic and
+          responsive web applications using modern technologies.
         </p>
       </div>
     </ng-container>
-    <ng-container *ngIf="info?.skills">
+    <ng-container *ngIf="skills">
       <div>
         <h2 class="text-4xl font-bold text-gray-700 dark:text-white mb-5">
           Skills
         </h2>
-        <ul
-          class="list-disc list-inside text-lg text-gray-600 dark:text-gray-400">
-          <li><strong>Frontend:</strong> {{ info.skills.frontend }}</li>
-          <li><strong>Backend:</strong> {{ info.skills.backend }}</li>
-          <li><strong>Database:</strong> {{ info.skills.database }}</li>
-          <li>
-            <strong>Version Control:</strong> {{ info.skills.versionControl }}
-          </li>
-          <li>
-            <strong>Containerization:</strong>
-            {{ info.skills.containerization }}
-          </li>
-        </ul>
+        <div class="relative h-[180px]">
+          <div class="carousel-container absolute">
+            <div class="carousel-wrapper py-5">
+              <div class="carousel-content">
+                <ng-container *ngFor="let skill of skills">
+                  <div
+                    class="skill-item bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex flex-col items-center justify-center transform hover:scale-110 transition-transform duration-500">
+                    <img
+                      [src]="skill.icon"
+                      alt="{{ skill.label }}"
+                      class="h-16 w-16 object-contain mb-2" />
+                    <div class="text-center">
+                      <strong class="block text-gray-700 dark:text-white">{{
+                        skill.label
+                      }}</strong>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </ng-container>
-    <ng-container *ngIf="info?.education">
+    <ng-container *ngIf="educations">
       <div>
         <h2 class="text-4xl font-bold text-gray-700 dark:text-white mb-5">
           Education
         </h2>
-        <ng-container *ngFor="let education of info.education">
+        <ng-container *ngFor="let education of educations">
           <ol class="relative border-s border-gray-200 dark:border-gray-700">
             <li class="mb-10 ms-4">
               <div
                 class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >{{ education.graduationYear }}</time
+                >{{ education.startDate }} - {{ education.endDate }}</time
               >
               <h3 class="text-lg font-semibold text-gray-700 dark:text-white">
                 {{ education.institute }}
@@ -69,25 +77,31 @@
         </ng-container>
       </div>
     </ng-container>
-    <ng-container *ngIf="info?.experience">
+    <ng-container *ngIf="experiences">
       <div>
         <h2 class="text-4xl font-bold text-gray-700 dark:text-white mb-5">
           Experience
+          <p class="text-lg font-semibold text-gray-700 dark:text-gray-100">
+            {{ totalDuration }}
+          </p>
         </h2>
-        <ng-container *ngFor="let experience of info.experience">
+        <ng-container *ngFor="let experience of experiences">
           <ol class="relative border-s border-gray-200 dark:border-gray-700">
             <li class="mb-10 ms-4">
               <div
                 class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >{{ experience.startdate }} - {{ experience.enddate }}</time
+                >{{ experience.startDate }} -
+                {{ experience.endDate || 'Present' }} ({{
+                  experience.duration
+                }})</time
               >
               <h3 class="text-lg font-semibold text-gray-700 dark:text-white">
-                {{ experience.company }}
+                {{ experience.organizationName }}
               </h3>
               <h3 class="text-base font-semibold text-gray-700 dark:text-white">
-                {{ experience.position }}
+                {{ experience.jobPosition }}
               </h3>
               <p
                 class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">

@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "resume": "Resume"
+  },
+  "rating": {
+    "title": "How was your experience?"
+  }
+}
