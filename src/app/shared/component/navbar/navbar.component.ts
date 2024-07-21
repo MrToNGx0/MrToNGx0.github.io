@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   listMenu!: ListMenu[];
   language!: Language[];
+  isDarkMode!: boolean;
   isSelectLanguage!: Language;
 
   faSun = faCloudSun;
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isDarkMode = this.themeService.isDarkMode()
     this.language = this.languageService.getLanguage();
     this.languageService.getSelectedLanguage().subscribe(language => {
       if (language) {
