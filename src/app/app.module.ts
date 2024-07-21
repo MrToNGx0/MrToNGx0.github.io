@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LanguageService } from './core/service/language/language.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserService } from './core/service/user/user.service';
 import { NotificationModule } from './shared/component/notification/notification.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,8 @@ import { NotificationService } from './core/service/notification/notification.se
 import { ThemeService } from './core/service/theme/theme.service';
 import { RatingComponent } from './shared/modal/rating/rating.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoggingInterceptor } from './core/interceptor/logging/logging.interceptor';
+import { ErrorInterceptor } from './core/interceptor/error/error.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,7 +39,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [LanguageService, UserService, NotificationService, ThemeService],
+  providers: [LanguageService, UserService, NotificationService, ThemeService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
