@@ -20,6 +20,11 @@
       "link": "https://www.instagram.com/_ttttttttttttttttttttong/"
     },
     {
+      "label": "Github",
+      "icon": "./assets/icon/github.png",
+      "link": "https://github.com/MrToNGx0"
+    },
+    {
       "label": "Youtube",
       "icon": "./assets/icon/youtube.png",
       "link": "https://www.youtube.com/@mrtong8055"
