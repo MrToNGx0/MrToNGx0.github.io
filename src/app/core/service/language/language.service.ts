@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 import { Language } from 'src/app/shared/interface/laguage.interface';
 
 @Injectable({
@@ -9,7 +10,6 @@ export class LanguageService {
   private isSelectLanguageSubject: BehaviorSubject<Language>;
   public isSelectLanguage$: Observable<Language>;
 
-  languageKey = 'IsLanguage';
   isSelectLanguage!: Language;
   language: Language[] = [
     {
@@ -31,7 +31,7 @@ export class LanguageService {
     let initialLanguage = defaultLanguage;
 
     if (typeof localStorage !== 'undefined') {
-      const storedLanguageId = localStorage.getItem(this.languageKey);
+      const storedLanguageId = localStorage.getItem(LanguageEnum.referenceKey);
       if (storedLanguageId) {
         const selectedLanguageId = parseInt(storedLanguageId, 10);
         const storedLanguage = this.language.find(
@@ -58,7 +58,7 @@ export class LanguageService {
   }
 
   setLanguage(language: Language): void {
-    localStorage.setItem(this.languageKey, language.id.toString());
+    localStorage.setItem(LanguageEnum.referenceKey, language.id.toString());
     this.isSelectLanguageSubject.next(language);
   }
 }

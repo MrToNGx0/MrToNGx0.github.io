@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   openModal(): void {
     const dialogRef = this.dialog.open(RatingComponent, {
-      width: '300px', // ปรับขนาดตามที่ต้องการ
+      width: '300px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

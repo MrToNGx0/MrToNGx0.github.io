@@ -5,9 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from 'src/app/core/service/notification/notification.service';
 import { UserService } from 'src/app/core/service/user/user.service';
 import {
-  NotificationMessage,
-  NotificationType,
-} from 'src/app/shared/emun/notification';
+  NotificationMessageEnum,
+  NotificationTypeEnum,
+} from 'src/app/shared/emun/notification-enum';
 import { Profile } from 'src/app/shared/interface/profile.interface';
 
 @Component({
@@ -39,8 +39,8 @@ export class ContactComponent implements OnInit {
 
   onClickCopy(input: string) {
     this.notificationService.show(
-      NotificationType.Success,
-      NotificationMessage.CopiedToClipboard
+      NotificationTypeEnum.Success,
+      NotificationMessageEnum.CopiedToClipboard
     );
     navigator.clipboard.writeText(input);
   }

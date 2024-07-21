@@ -5,9 +5,9 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import {
-  NotificationMessage,
-  NotificationType,
-} from 'src/app/shared/emun/notification';
+  NotificationMessageEnum,
+  NotificationTypeEnum,
+} from 'src/app/shared/emun/notification-enum';
 import {
   Notification,
   NotificationIcon,
@@ -20,27 +20,27 @@ export class NotificationService {
   private notifications: Notification[] = [];
   private icons: NotificationIcon[] = [
     {
-      label: NotificationType.Success,
+      label: NotificationTypeEnum.Success,
       icon: faCheckCircle,
       class:
         'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
     },
     {
-      label: NotificationType.Warning,
+      label: NotificationTypeEnum.Warning,
       icon: faExclamationCircle,
       class:
         'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
     },
     {
-      label: NotificationType.Error,
+      label: NotificationTypeEnum.Error,
       icon: faTimesCircle,
       class: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
     },
   ];
 
   show(
-    type: NotificationType,
-    message: NotificationMessage,
+    type: NotificationTypeEnum,
+    message: NotificationMessageEnum,
     options: any = {}
   ): void {
     const item = this.icons.find(item => item.label === type);

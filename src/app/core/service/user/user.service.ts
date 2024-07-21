@@ -1,36 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { config } from '../../config/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  profilePath = 'assets/json/profile.json';
-  skillPath = 'assets/json/skill.json';
-  certificatePath = 'assets/json/certificate.json';
-  experiencePath = 'assets/json/experience.json';
-  educationPath = 'assets/json/education.json';
 
   constructor(private http: HttpClient) {}
 
   getProfile(): Observable<any> {
-    return this.http.get<any>(this.profilePath);
+    return this.http.get<any>(config.api.endpoint.profilePath);
   }
 
   getSkill(): Observable<any> {
-    return this.http.get<any>(this.skillPath);
+    return this.http.get<any>(config.api.endpoint.skillPath);
   }
 
   getCertificate(): Observable<any> {
-    return this.http.get<any>(this.certificatePath);
+    return this.http.get<any>(config.api.endpoint.certificatePath);
   }
 
   getExperience(): Observable<any> {
-    return this.http.get<any>(this.experiencePath);
+    return this.http.get<any>(config.api.endpoint.experiencePath);
   }
 
   getEducation(): Observable<any> {
-    return this.http.get<any>(this.educationPath);
+    return this.http.get<any>(config.api.endpoint.educationPath);
   }
 }

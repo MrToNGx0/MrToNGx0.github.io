@@ -29,7 +29,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.translate.get('nav.about').subscribe((tabName: string) => {
       this.titleService.setTitle(`MrToNG | ${tabName}`);
     });
-    this.titleService.setTitle('MrToNG | About');
   }
 
   async ngOnInit(): Promise<void> {
