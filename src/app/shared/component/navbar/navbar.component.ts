@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
   listMenu!: ListMenu[];
-  language!: Language[];
+  languages!: Language[];
   isDarkMode!: boolean;
   isSelectLanguage!: Language;
 
@@ -24,17 +24,19 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private languageService: LanguageService,
     private themeService: ThemeService,
-    private translate: TranslateService
+    private translate: TranslateService,
   ) {
-    this.languageService.getSelectedLanguage().subscribe(language => {
-      this.translate.setDefaultLang(language.value.toLowerCase());
+    this.languageService.getSelectedLanguage().subscribe((language) => {
+      this.translate.setDefaultLang(language.language_code.toLowerCase());
     });
   }
 
   ngOnInit(): void {
-    this.isDarkMode = this.themeService.isDarkMode()
-    this.language = this.languageService.getLanguage();
-    this.languageService.getSelectedLanguage().subscribe(language => {
+    this.isDarkMode = this.themeService.isDarkMode();
+    this.languageService.loadLanguages().subscribe((languages: Language[]) => {
+      this.languages = languages;
+    });
+    this.languageService.getSelectedLanguage().subscribe((language) => {
       if (language) {
         this.isSelectLanguage = language;
       }
@@ -58,7 +60,7 @@ export class NavbarComponent implements OnInit {
   }
 
   checkActiveLinks(): void {
-    this.listMenu.forEach(item => {
+    this.listMenu.forEach((item) => {
       item.class = this.router.isActive(item.routerLink, true)
         ? 'text-blue-600 dark:text-blue-400'
         : 'text-gray-700 dark:text-gray-200';

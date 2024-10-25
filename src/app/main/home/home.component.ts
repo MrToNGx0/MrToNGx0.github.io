@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       this.titleService.setTitle(`MrToNG | ${tabName}`);
     });
     this.languageService.getSelectedLanguage().subscribe(language => {
-      this.translate.setDefaultLang(language.value.toLowerCase());
+      this.translate.setDefaultLang(language.language_code.toLowerCase());
     });
   }
 

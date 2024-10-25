@@ -1,8 +1,8 @@
 export interface Language {
   id: number;
-  label: string;
-  value: string;
-  linkImage: string;
+  language_code: string;
+  language_name: string;
+  picture_url: string;
 }
 
 export interface ListMenu {

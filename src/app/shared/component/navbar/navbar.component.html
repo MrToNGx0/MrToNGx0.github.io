@@ -36,7 +36,7 @@
           class="inline-flex items-center font-medium justify-center w-10 h-8 text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">
           <img
             class="h-auto w-8"
-            [src]="isSelectLanguage.linkImage"
+            [src]="isSelectLanguage.picture_url"
             [alt]="isSelectLanguage.id" />
         </button>
       </ng-container>
@@ -44,7 +44,7 @@
         class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
         id="language-dropdown-menu">
         <ul class="py-2 font-medium" role="none">
-          <ng-container *ngFor="let item of language">
+          <ng-container *ngFor="let item of languages">
             <li>
               <a
                 class="block w-40 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
@@ -56,10 +56,10 @@
                 <div class="flex justify-start items-center gap-3">
                   <img
                     class="h-auto w-8"
-                    [src]="item.linkImage"
+                    [src]="item.picture_url"
                     [alt]="item.id" />
                   <p>
-                    {{ item.label }}
+                    {{ item.language_name }}
                   </p>
                 </div>
               </a>
