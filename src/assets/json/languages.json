@@ -1,0 +1,14 @@
+[
+  {
+    "id": 2,
+    "language_code": "EN",
+    "language_name": "English",
+    "picture_url": "./assets/icon/united-kingdom.png"
+  },
+  {
+    "id": 1,
+    "language_code": "TH",
+    "language_name": "ไทย",
+    "picture_url": "./assets/icon/thailand.png"
+  }
+]
