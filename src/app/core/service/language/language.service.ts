@@ -1,56 +1,39 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { LanguageEnum } from 'src/app/shared/emun/language-enum';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { config } from '../../config/config';
 import { Language } from 'src/app/shared/interface/laguage.interface';
+import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LanguageService {
-  private isSelectLanguageSubject: BehaviorSubject<Language>;
-  public isSelectLanguage$: Observable<Language>;
+  private isSelectLanguageSubject = new BehaviorSubject<Language>({
+    id: 1,
+    language_code: 'EN',
+    language_name: 'English',
+    picture_url: './assets/icon/united-kingdom.png',
+  });
+  public isSelectLanguage$: Observable<Language> =
+    this.isSelectLanguageSubject.asObservable();
+  public languages: Language[] = [];
 
-  isSelectLanguage!: Language;
-  language: Language[] = [
-    {
-      id: 1,
-      label: 'ไทย',
-      value: 'th',
-      linkImage: './assets/icon/thailand.png',
-    },
-    {
-      id: 2,
-      label: 'English',
-      value: 'en',
-      linkImage: './assets/icon/united-kingdom.png',
-    },
-  ];
+  constructor(private http: HttpClient) {}
 
-  constructor() {
-    const defaultLanguage = this.language[0];
-    let initialLanguage = defaultLanguage;
-
-    if (typeof localStorage !== 'undefined') {
-      const storedLanguageId = localStorage.getItem(LanguageEnum.referenceKey);
-      if (storedLanguageId) {
-        const selectedLanguageId = parseInt(storedLanguageId, 10);
-        const storedLanguage = this.language.find(
-          item => item.id === selectedLanguageId
+  loadLanguages(): Observable<Language[]> {
+    return this.http.get<Language[]>(config.api.endpoint.languagesPath).pipe(
+      tap((languages) => {
+        this.languages = languages;
+        const storedLanguageId = localStorage.getItem(
+          LanguageEnum.referenceKey,
         );
-        if (storedLanguage) {
-          initialLanguage = storedLanguage;
-        }
-      }
-    }
-
-    this.isSelectLanguageSubject = new BehaviorSubject<Language>(
-      initialLanguage
+        const defaultLanguage =
+          languages.find((lang) => lang.language_code === storedLanguageId) ||
+          languages[0];
+        this.setLanguage(defaultLanguage);
+      }),
     );
-    this.isSelectLanguage$ = this.isSelectLanguageSubject.asObservable();
-  }
-
-  getLanguage(): Language[] {
-    return this.language;
   }
 
   getSelectedLanguage(): Observable<Language> {
@@ -58,7 +41,7 @@ export class LanguageService {
   }
 
   setLanguage(language: Language): void {
-    localStorage.setItem(LanguageEnum.referenceKey, language.id.toString());
+    localStorage.setItem(LanguageEnum.referenceKey, language.language_code);
     this.isSelectLanguageSubject.next(language);
   }
 }
