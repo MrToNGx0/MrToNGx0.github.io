@@ -1,0 +1,178 @@
+[
+  {
+    "title": "E-Academy",
+    "description": "แพลตฟอร์มเรียนออนไลน์ที่ช่วยให้ผู้ใช้งานสามารถเก็บคะแนน ออกใบประกาศนียบัตร พร้อมการแจ้งเตือนการเรียนซ้ำผ่าน Line โดยพัฒนาด้วย Angular และ ExpressJS ร่วมกับ Moodle",
+    "banner_url": "https://e-academy.ditp.go.th/assets/e-academy/image/logo/logo_top.png",
+    "link": "https://e-academy.ditp.go.th/home",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "ExpressJS",
+        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+      },
+      {
+        "label": "Bootstrap",
+        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+      },
+      {
+        "label": "Angular Material",
+        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+      },
+      {
+        "label": "Moodle",
+        "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png"
+      }
+    ]
+  },
+  {
+    "title": "E-Academy Backoffice",
+    "description": "ระบบหลังบ้านสำหรับจัดการข้อมูลใน E-Academy เช่น รายงานผลการเรียน การเพิ่ม/ลบหลักสูตรและวิทยากร ติดตามคะแนนผู้เรียน และการแจ้งเตือนผ่าน Line",
+    "banner_url": "",
+    "link": "https://e-academy.ditp.go.th/backoffice/",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "ExpressJS",
+        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+      },
+      {
+        "label": "Bootstrap",
+        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+      },
+      {
+        "label": "Angular Material",
+        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+      },
+      {
+        "label": "Messaging Api",
+        "icon": "https://developers.line.biz/assets/img/products/messaging-api/p1.svg"
+      }
+    ]
+  },
+  {
+    "title": "Nea Chatbot",
+    "description": "แพลตฟอร์มตอบกลับอัตโนมัติด้วย Chatbot ที่พัฒนาด้วย WebApp ใช้ NestJS และ Python รองรับการเทรนข้อมูลเพื่อปรับปรุงการตอบสนอง เพิ่มความยืดหยุ่นในการใช้งาน",
+    "banner_url": "https://nea.ditp.go.th/th/images/logo-nea.png",
+    "link": "https://e-academy.ditp.go.th/livechat/ui/chatbox",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "NestJS",
+        "icon": "https://nestjs.com/img/logo-small.svg"
+      },
+      {
+        "label": "PrimeNG",
+        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+      },
+      {
+        "label": "Python",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+      },
+      {
+        "label": "Socket.IO",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
+      },
+      {
+        "label": "Strapi",
+        "icon": "https://strapi.io/assets/favicon-32x32.png"
+      }
+    ]
+  },
+  {
+    "title": "QSurvey",
+    "description": "แพลตฟอร์มติดตามผลการทำแบบประเมิน พร้อมฟีเจอร์รายงานผลแบบ Dashboard การสร้าง/ลบแบบประเมิน และการ Export ข้อมูลในรูปแบบไฟล์ Excel",
+    "banner_url": "https://nea.qsurve.convtech.app/assets/logo_qserve.png",
+    "link": "https://nea.qsurve.convtech.app/view/dashboard",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "PrimeNG",
+        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+      },
+      {
+        "label": "NestJS",
+        "icon": "https://nestjs.com/img/logo-small.svg"
+      }
+    ]
+  },
+  {
+    "title": "QIM",
+    "description": "เว็บไซต์ CRM สำหรับจัดการข้อมูลการสนทนาผ่าน Webchat และ Appchat พร้อมฟีเจอร์ติดตามการทำงานของ Agent และสรุปผลการทำงาน",
+    "banner_url": "",
+    "link": "",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "Bootstrap",
+        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+      },
+      {
+        "label": "ExpressJS",
+        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+      },
+      {
+        "label": "Socket.IO",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
+      }
+    ]
+  },
+  {
+    "title": "Isuzu Leasing",
+    "description": "แพลตฟอร์มจัดการข้อมูล ประวัติการทำงานของ OA และการติดตามผลสินเชื่อสำหรับ Isuzu พร้อมฟีเจอร์สรุปภาพรวมการทำงาน",
+    "banner_url": "",
+    "link": "",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "PrimeNG",
+        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+      },
+      {
+        "label": "Angular Material",
+        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+      },
+      {
+        "label": "C#",
+        "icon": "https://marcuscode.com/media/21/marcuscode_XLgCGHrYlAfWpY2_1000.png"
+      }
+    ]
+  },
+  {
+    "title": "Portfolio",
+    "description": "เว็บไซต์แสดงผลงาน Portfolio ส่วนตัว แสดงข้อมูลส่วนตัว ประวัติการทำงาน โปรเจคที่เคยทำ ประวัติการศึกษาและช่องทางการติดต่อ",
+    "banner_url": "",
+    "link": "https://mrtongx0.github.io/",
+    "skills": [
+      {
+        "label": "Angular",
+        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+      },
+      {
+        "label": "Tailwind",
+        "icon": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+      },
+      {
+        "label": "Angular Material",
+        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+      }
+    ]
+  }
+]

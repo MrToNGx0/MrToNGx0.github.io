@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from 'src/app/core/service/language/language.service';
 import { NotificationService } from 'src/app/core/service/notification/notification.service';
-import { UserService } from 'src/app/core/service/user/user.service';
+import { ProfileService } from 'src/app/core/service/profile/profile.service';
+import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 import {
   NotificationMessageEnum,
   NotificationTypeEnum,
@@ -18,29 +20,38 @@ import { Profile } from 'src/app/shared/interface/profile.interface';
 export class ContactComponent implements OnInit {
   profile!: Profile;
   class = 'scale-[1.7]';
+  languageCode = '';
 
   faEnvelope = faEnvelope;
   faPhone = faPhone;
 
   constructor(
-    private userService: UserService,
+    private profileService: ProfileService,
     private notificationService: NotificationService,
     private titleService: Title,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private languageService: LanguageService,
   ) {
     this.translate.get('nav.contact').subscribe((tabName: string) => {
       this.titleService.setTitle(`MrToNG | ${tabName}`);
     });
+    this.languageCode =
+      localStorage.getItem(LanguageEnum.referenceKey)?.toLowerCase() ?? 'en';
   }
 
-  async ngOnInit(): Promise<void> {
-    this.profile = await this.userService.getProfile().toPromise();
+  ngOnInit(): void {
+    this.languageService.getSelectedLanguage().subscribe(async (language) => {
+      this.translate.setDefaultLang(language.language_code.toLowerCase());
+      this.profile = await this.profileService
+        .getProfile(language.language_code.toLowerCase())
+        .toPromise();
+    });
   }
 
   onClickCopy(input: string) {
     this.notificationService.show(
       NotificationTypeEnum.Success,
-      NotificationMessageEnum.CopiedToClipboard
+      NotificationMessageEnum.CopiedToClipboard,
     );
     navigator.clipboard.writeText(input);
   }

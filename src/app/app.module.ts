@@ -4,8 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LanguageService } from './core/service/language/language.service';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-import { UserService } from './core/service/user/user.service';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { NotificationModule } from './shared/component/notification/notification.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -39,9 +42,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [LanguageService, UserService, NotificationService, ThemeService,
+  providers: [
+    LanguageService,
+    NotificationService,
+    ThemeService,
     { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

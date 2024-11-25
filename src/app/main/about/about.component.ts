@@ -1,7 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
-import { UserService } from 'src/app/core/service/user/user.service';
+import { LanguageService } from 'src/app/core/service/language/language.service';
+import { ProfileService } from 'src/app/core/service/profile/profile.service';
+import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 import { Education } from 'src/app/shared/interface/education.interface';
 import { Experience } from 'src/app/shared/interface/experience.interface';
 import { Profile } from 'src/app/shared/interface/profile.interface';
@@ -12,41 +18,54 @@ import { Skill } from 'src/app/shared/interface/skill.interface';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit, OnDestroy {
+export class AboutComponent implements OnInit {
   profile!: Profile;
-  skills!: Skill[];
-  experiences!: Experience[];
-  educations!: Education[];
+  skills: Skill[] = [];
+  experiences: Experience[] = [];
+  educations: Education[] = [];
   totalDuration!: string;
-  currentTransform = 0;
-  interval: any;
+  languageCode = '';
+  sliderOffset = 0;
+  slideWidth = 250 + 24;
+
+  faChevronLeft = faChevronLeft;
+  faChevronRight = faChevronRight;
 
   constructor(
-    private userService: UserService,
+    private profileService: ProfileService,
     private titleService: Title,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private languageService: LanguageService,
   ) {
     this.translate.get('nav.about').subscribe((tabName: string) => {
       this.titleService.setTitle(`MrToNG | ${tabName}`);
     });
+    this.languageCode =
+      localStorage.getItem(LanguageEnum.referenceKey)?.toLowerCase() ?? 'en';
   }
 
-  async ngOnInit(): Promise<void> {
-    this.profile = await this.userService.getProfile().toPromise();
-    this.skills = await this.userService.getSkill().toPromise();
-    this.experiences = await this.userService.getExperience().toPromise();
-    this.educations = await this.userService.getEducation().toPromise();
-    this.calculateDurations();
-    this.calculateTotalDuration();
-    this.startCarousel();
-  }
-
-  ngOnDestroy() {
-    this.stopCarousel();
+  ngOnInit(): void {
+    this.languageService.getSelectedLanguage().subscribe(async (language) => {
+      this.translate.setDefaultLang(language.language_code.toLowerCase());
+      this.profile = await this.profileService
+        .getProfile(language.language_code.toLowerCase())
+        .toPromise();
+      this.skills = await this.profileService
+        .getSkill(language.language_code.toLowerCase())
+        .toPromise();
+      this.experiences = await this.profileService
+        .getExperience(language.language_code.toLowerCase())
+        .toPromise();
+      this.educations = await this.profileService
+        .getEducation(language.language_code.toLowerCase())
+        .toPromise();
+      this.calculateDurations();
+      this.calculateTotalDuration();
+    });
   }
 
   calculateDurations(): void {
-    this.experiences.forEach(experience => {
+    this.experiences.forEach((experience) => {
       const start = new Date(experience.startDate);
       const end = experience.endDate
         ? new Date(experience.endDate)
@@ -58,7 +77,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   calculateTotalDuration(): void {
     let totalDays = 0;
-    this.experiences.forEach(experience => {
+    this.experiences.forEach((experience) => {
       const start = new Date(experience.startDate);
       const end = experience.endDate
         ? new Date(experience.endDate)
@@ -85,24 +104,17 @@ export class AboutComponent implements OnInit, OnDestroy {
     return `${years} years, ${months} months, ${days} days`;
   }
 
-  startCarousel() {
-    this.interval = setInterval(() => {
-      this.scrollCarousel();
-    }, 50);
-  }
-
-  stopCarousel() {
-    clearInterval(this.interval);
-  }
-
-  scrollCarousel() {
-    const carouselContent = document.querySelector(
-      '.carousel-content'
-    ) as HTMLElement;
-    this.currentTransform -= 2;
-    if (Math.abs(this.currentTransform) >= carouselContent.scrollWidth / 2) {
-      this.currentTransform = 0;
+  prevSlide() {
+    this.sliderOffset += this.slideWidth;
+    if (this.sliderOffset > 0) {
+      this.sliderOffset = -this.slideWidth * (this.skills.length - 1);
     }
-    carouselContent.style.transform = `translateX(${this.currentTransform}px)`;
+  }
+
+  nextSlide() {
+    this.sliderOffset -= this.slideWidth;
+    if (this.sliderOffset < -this.slideWidth * (this.skills.length - 1)) {
+      this.sliderOffset = 0;
+    }
   }
 }

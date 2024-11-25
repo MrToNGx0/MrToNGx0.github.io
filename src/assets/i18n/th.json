@@ -5,7 +5,24 @@
     "contact": "ติดต่อ"
   },
   "home": {
-    "resume": "เรซูเม่"
+    "hiIAm": "สวัสดี, ฉันคือ",
+    "iAm": "ฉันเป็น",
+    "basedIn": "อาศัยอยู่ที่",
+    "resume": "เรซูเม่",
+    "ourWork": "ผลงานของเรา",
+    "skills": "ทักษะ",
+    "livePreview": "ดูตัวอย่างสด"
+  },
+  "about": {
+    "noSkills": "ไม่มีข้อมูลทักษะ",
+    "noEducations": "ไม่มีข้อมูลการศึกษา",
+    "noExperiences": "ไม่มีข้อมูลประสบการณ์",
+    "noResponsibilities": "ม่มีข้อมูลหน้าที่",
+    "skills": "ทักษะ",
+    "education": "การศึกษา",
+    "experience": "ประสบการณ์",
+    "gpa": "GPA",
+    "present": "ปัจจุบัน"
   },
   "rating": {
     "title": "ประสบการณ์ของคุณเป็นอย่างไรบ้าง?"

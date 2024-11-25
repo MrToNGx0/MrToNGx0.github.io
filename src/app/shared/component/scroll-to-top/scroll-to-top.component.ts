@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -11,7 +11,7 @@ export class ScrollToTopComponent {
   showScrollHeight = 200;
   hideScrollHeight = 200;
 
-  faCircleArrowUp = faArrowAltCircleUp;
+  faChevronCircleUp = faChevronCircleUp;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

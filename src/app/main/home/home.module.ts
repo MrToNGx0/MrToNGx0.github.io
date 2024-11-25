@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollTextModule } from 'src/app/shared/component/scroll-text/scroll-text.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -11,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FontAwesomeModule,
     TranslateModule,
+    ScrollTextModule,
     RouterModule.forChild([
       {
         path: '',

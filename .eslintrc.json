@@ -11,6 +11,8 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
         "@angular-eslint/directive-selector": [
           "error",
           {
