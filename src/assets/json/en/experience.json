@@ -1,13 +1,19 @@
 [
   {
+    "jobPosition": "Software Development",
+    "organizationName": "AheadAll Co.,LTD.",
+    "startDate": "2024-11-18",
+    "endDate": "",
+    "responsibilities": ["Develop and maintain web applications"]
+  },
+  {
     "jobPosition": "Software Enginer (Full Stack)",
     "organizationName": "Kabin Technology CO.,LTD.",
     "startDate": "2024-06-01",
-    "endDate": "",
+    "endDate": "2024-10-31",
     "responsibilities": [
       "Develop and maintain web applications",
-      "Collaborate with design and backend teams",
-      "Optimize code for performance and scalability",
+      "Optimize code for performance",
       "Identify and resolve technical issues",
       "Implement new features based on user feedback"
     ]
@@ -19,8 +25,7 @@
     "endDate": "2024-05-31",
     "responsibilities": [
       "Develop and maintain web applications",
-      "Collaborate with design and backend teams",
-      "Optimize code for performance and scalability",
+      "Optimize code for performance",
       "Identify and resolve technical issues",
       "Implement new features based on user feedback"
     ]
@@ -32,7 +37,6 @@
     "endDate": "2021-05-31",
     "responsibilities": [
       "Assist in machine maintenance",
-      "Conduct system diagnostics",
       "Support engineering team with daily tasks",
       "Document technical procedures",
       "Provide technical support to clients"

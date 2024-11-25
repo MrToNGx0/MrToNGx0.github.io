@@ -1,39 +1,170 @@
-<div
-  class="container mx-auto w-full h-full flex justify-center items-center py-5">
-  <ng-container *ngIf="profile">
-    <div class="flex items-center justify-center gap-5 w-full h-full">
-      <div class="flex justify-center items-center w-2/5">
-        <div
-          class="w-full max-w-[28rem] h-auto aspect-square rounded-full overflow-hidden relative">
-          <img
-            [src]="profile.avatarLink"
-            alt="Profile Picture"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-            [class]="class ? class : ''" />
-        </div>
-      </div>
-      <div class="flex flex-col items-center w-3/6 gap-3">
+<div class="h-screen overflow-y-auto snap-mandatory snap-y">
+  <div class="container mx-auto">
+    <ng-container *ngIf="profile">
+      <section
+        class="flex flex-col justify-center items-center leading-none h-screen overflow-hidden snap-start"
+      >
         <p
-          class="font-extrabold text-gray-700 dark:text-gray-200 text-6xl cursor-default">
-          HI, I AM {{ profile.nickname | uppercase }}
+          class="font-extrabold text-gray-700 dark:text-gray-200 text-[35vh] font-sans cursor-default"
+        >
+          {{ profile.firstName | uppercase }}
         </p>
-        <p class="text-2xl text-gray-600 dark:text-gray-300 cursor-default">
-          I am {{ profile.jobPosition }}
+        <p
+          class="font-extrabold text-gray-700 dark:text-gray-200 text-[35vh] font-sans cursor-default"
+        >
+          {{ profile.lastName | uppercase }}
         </p>
-        <p class="text-2xl text-gray-600 dark:text-gray-300 cursor-default">
-          based in {{ profile.location }}
-        </p>
-        <a
-          class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-white text-gray-700 dark:text-gray-400 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-400 dark:hover:text-blue-300 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 cursor-pointer"
-          [href]="profile.resumeLink"
-          (click)="openModal()"
-          target="_blank">
-          <div class="flex text-lg gap-2">
-            <p class="font-medium">{{ 'home.resume' | translate }}</p>
-            <fa-icon [icon]="faLink" class="font-medium"></fa-icon>
+      </section>
+    </ng-container>
+
+    <ng-container *ngIf="profile">
+      <section
+        class="flex items-center justify-center gap-5 w-full h-screen overflow-auto snap-start"
+      >
+        <div class="flex justify-center items-center w-2/5">
+          <div
+            class="w-full max-w-[28rem] h-auto aspect-square rounded-full overflow-hidden relative"
+          >
+            <img
+              [src]="profile.avatarLink"
+              alt="Profile Picture"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              [class]="class ? class : ''"
+            />
           </div>
-        </a>
-      </div>
-    </div>
-  </ng-container>
+        </div>
+        <div class="flex flex-col items-center w-3/6 gap-3">
+          <p
+            class="font-extrabold text-gray-700 dark:text-gray-200 text-6xl cursor-default"
+          >
+            {{ "home.hiIAm" | translate }} {{ profile.nickname | uppercase }}
+          </p>
+          <p class="text-2xl text-gray-600 dark:text-gray-300 cursor-default">
+            {{ "home.iAm" | translate }} {{ profile.jobPosition }}
+          </p>
+          <p class="text-2xl text-gray-600 dark:text-gray-300 cursor-default">
+            {{ "home.basedIn" | translate }} {{ profile.location }}
+          </p>
+          <a
+            class="py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-white text-gray-700 dark:text-gray-400 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-400 dark:hover:text-blue-300 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-zinc-800 dark:border-gray-600 dark:hover:bg-gray-700 cursor-pointer"
+            [href]="profile.resumeLink"
+            (click)="openModal()"
+            target="_blank"
+          >
+            <div class="flex text-lg gap-2">
+              <p class="font-medium">{{ "home.resume" | translate }}</p>
+              <fa-icon [icon]="faLink" class="font-medium"></fa-icon>
+            </div>
+          </a>
+        </div>
+      </section>
+    </ng-container>
+
+    <ng-container *ngIf="projects && projects.length > 0">
+      <section
+        class="flex flex-col justify-center items-center leading-none h-screen overflow-hidden snap-start"
+      >
+        <h2
+          class="font-extrabold text-gray-700 dark:text-gray-200 text-6xl mb-5 cursor-default"
+        >
+          {{ "home.ourWork" | translate }}
+        </h2>
+        <div
+          class="flex overflow-x-auto snap-x snap-mandatory w-full px-[50vw] scrollbar-hide"
+        >
+          <ng-container *ngFor="let project of projects">
+            <div
+              class="flex-none snap-center h-full flex items-center justify-center"
+            >
+              <div
+                class="rounded-lg shadow-lg overflow-hidden w-3/4 max-w-lg transform transition-transform duration-300"
+              >
+                <div
+                  class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg dark:bg-zinc-800 dark:border-zinc-700"
+                >
+                  <div class="h-[30px] mb-4 flex items-center justify-start">
+                    <img
+                      *ngIf="project.banner_url; else placeholderBanner"
+                      [src]="project.banner_url"
+                      alt="{{ project.title }}"
+                      class="h-full"
+                    />
+                    <ng-template #placeholderBanner>
+                      <div
+                        class="h-[30px] w-[30px] flex items-center justify-center bg-gray-300 rounded-full text-white font-bold"
+                      >
+                        {{ project.title | slice: 0 : 1 }}
+                      </div>
+                    </ng-template>
+                  </div>
+
+                  <h5
+                    class="min-h-[calc(1.75rem*1)] max-h-[calc(1.75rem*1)] text-lg mb-2 font-bold tracking-tight text-gray-700 dark:text-gray-50 line-clamp-1 cursor-default"
+                  >
+                    {{ project.title }}
+                  </h5>
+                  <p
+                    class="min-h-[calc(1rem*4)] max-h-[calc(1rem*4)] mb-3 text-xs text-gray-700 dark:text-gray-400 line-clamp-4 cursor-default"
+                  >
+                    {{ project.description }}
+                  </p>
+
+                  <div class="mb-4">
+                    <h6
+                      class="font-semibold mb-2 text-gray-700 dark:text-gray-200"
+                    >
+                      {{ "home.skills" | translate }}:
+                    </h6>
+                    <ul class="flex space-x-2 cursor-default">
+                      <li *ngFor="let skill of project.skills; let i = index">
+                        <ng-container *ngIf="i < 5; else moreSkills">
+                          <ng-container
+                            *ngIf="skill.icon; else placeholderSkill"
+                          >
+                            <img
+                              [src]="skill.icon"
+                              alt="{{ skill.label }}"
+                              class="w-8 h-8 rounded-full"
+                              title="{{ skill.label }}"
+                            />
+                          </ng-container>
+                          <ng-template #placeholderSkill>
+                            <div
+                              class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full text-white font-bold"
+                            >
+                              {{ skill.label | slice: 0 : 1 | uppercase }}
+                            </div>
+                          </ng-template>
+                        </ng-container>
+                      </li>
+                      <ng-template #moreSkills>
+                        <li
+                          class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 font-bold"
+                        >
+                          <p class="text-sm text-center leading-none">
+                            +{{ project.skills.length - 5 }}
+                          </p>
+                        </li>
+                      </ng-template>
+                    </ul>
+                  </div>
+
+                  <a
+                    [href]="project.link || null"
+                    [ngClass]="{
+                      'pointer-events-none opacity-50': !project.link,
+                    }"
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-white text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-400 dark:hover:text-blue-300 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-zinc-800 dark:border-gray-600 dark:hover:bg-gray-700"
+                  >
+                    <p>{{ "home.livePreview" | translate }}</p>
+                    <fa-icon [icon]="faShareSquare" class="ms-2"></fa-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </section>
+    </ng-container>
+  </div>
 </div>

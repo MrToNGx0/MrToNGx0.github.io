@@ -1,12 +1,14 @@
 export const config = {
-  api : {
+  mockup: true,
+  api: {
     endpoint: {
-      profilePath: 'assets/json/profile.json',
-      skillPath: 'assets/json/skill.json',
-      certificatePath: 'assets/json/certificate.json',
-      experiencePath: 'assets/json/experience.json',
-      educationPath: 'assets/json/education.json',
-      languagesPath: 'assets/json/languages.json'
-    }
-  }
+      profilePath: 'profile',
+      skillPath: 'skill',
+      certificatePath: 'certificate',
+      experiencePath: 'experience',
+      educationPath: 'education',
+      languagesPath: 'languages',
+      projectPath: 'project',
+    },
+  },
 };

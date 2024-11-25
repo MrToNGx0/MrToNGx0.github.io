@@ -5,7 +5,24 @@
     "contact": "Contact"
   },
   "home": {
-    "resume": "Resume"
+    "hiIAm": "HI, I AM",
+    "iAm": "I am",
+    "basedIn": "based in",
+    "resume": "Resume",
+    "ourWork": "OUR WORK",
+    "skills": "Skills",
+    "livePreview": "Live preview"
+  },
+  "about": {
+    "skills": "Skills",
+    "noSkills": "No skills available.",
+    "noEducations": "No education information available.",
+    "noExperiences": "No experience information available.",
+    "noResponsibilities": "No responsibilitie information available",
+    "education": "Education",
+    "experience": "Experience",
+    "gpa": "GPA",
+    "present": "Present"
   },
   "rating": {
     "title": "How was your experience?"

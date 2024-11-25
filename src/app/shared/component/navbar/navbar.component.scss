@@ -19,8 +19,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #73C0FC;
-  transition: .4s;
+  background-color: #73c0fc;
+  transition: 0.4s;
   border-radius: 30px;
 }
 
@@ -34,7 +34,7 @@
   bottom: 3px;
   z-index: 2;
   background-color: #e8e8e8;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sun svg {
@@ -47,7 +47,7 @@
 }
 
 .moon svg {
-  fill: #73C0FC;
+  fill: #73c0fc;
   position: absolute;
   top: 4px;
   left: 4px;
@@ -56,12 +56,11 @@
   height: 20px;
 }
 
-/* .switch:hover */.sun svg {
+.sun svg {
   animation: rotate 15s linear infinite;
 }
 
 @keyframes rotate {
-
   0% {
     transform: rotate(0);
   }
@@ -71,12 +70,11 @@
   }
 }
 
-/* .switch:hover */.moon svg {
+.moon svg {
   animation: tilt 5s linear infinite;
 }
 
 @keyframes tilt {
-
   0% {
     transform: rotate(0deg);
   }

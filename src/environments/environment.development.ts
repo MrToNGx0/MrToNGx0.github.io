@@ -1,6 +1,6 @@
 export const environment = {
   isProduction: false,
-  api : {
-    domain: ''
-  }
+  api: {
+    domain: 'assets/json',
+  },
 };

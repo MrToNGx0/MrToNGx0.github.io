@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { config } from '../../config/config';
 import { Language } from 'src/app/shared/interface/laguage.interface';
 import { LanguageEnum } from 'src/app/shared/emun/language-enum';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,10 @@ export class LanguageService {
   constructor(private http: HttpClient) {}
 
   loadLanguages(): Observable<Language[]> {
-    return this.http.get<Language[]>(config.api.endpoint.languagesPath).pipe(
+    const path = environment.isProduction
+      ? `${environment.api.domain}/${config.api.endpoint.languagesPath}`
+      : `assets/json/${config.api.endpoint.languagesPath}.json`;
+    return this.http.get<Language[]>(path).pipe(
       tap((languages) => {
         this.languages = languages;
         const storedLanguageId = localStorage.getItem(
