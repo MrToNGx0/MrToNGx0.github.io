@@ -42,9 +42,21 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.languageService.getSelectedLanguage().subscribe(async (language) => {
       this.translate.setDefaultLang(language.language_code.toLowerCase());
-      this.profile = await this.profileService
-        .getProfile(language.language_code.toLowerCase())
-        .toPromise();
+
+      try {
+        const [resultProfile] = await Promise.all([
+          this.profileService
+            .getProfile(language.language_code.toLowerCase())
+            .toPromise(),
+        ]);
+
+        this.profile = resultProfile.data;
+      } catch (error) {
+        this.notificationService.show(
+          NotificationTypeEnum.Error,
+          NotificationMessageEnum.ErrorInternalServer,
+        );
+      }
     });
   }
 

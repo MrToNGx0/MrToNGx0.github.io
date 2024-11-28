@@ -1,10 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
 import { config } from '../../config/config';
 import { Language } from 'src/app/shared/interface/laguage.interface';
 import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 import { environment } from 'src/environments/environment';
+import { NotificationService } from '../notification/notification.service';
+import {
+  NotificationMessageEnum,
+  NotificationTypeEnum,
+} from 'src/app/shared/emun/notification-enum';
 
 @Injectable({
   providedIn: 'root',
@@ -20,24 +25,43 @@ export class LanguageService {
     this.isSelectLanguageSubject.asObservable();
   public languages: Language[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private notificationService: NotificationService,
+  ) {}
 
   loadLanguages(): Observable<Language[]> {
     const path = environment.isProduction
-      ? `${environment.api.domain}/${config.api.endpoint.languagesPath}`
-      : `assets/json/${config.api.endpoint.languagesPath}.json`;
-    return this.http.get<Language[]>(path).pipe(
-      tap((languages) => {
-        this.languages = languages;
-        const storedLanguageId = localStorage.getItem(
-          LanguageEnum.referenceKey,
-        );
-        const defaultLanguage =
-          languages.find((lang) => lang.language_code === storedLanguageId) ||
-          languages[0];
-        this.setLanguage(defaultLanguage);
-      }),
-    );
+      ? `${environment.api.domain}${config.api.language.subpath}${config.api.language.endpoint.languagesPath}`
+      : `assets/json${config.api.language.endpoint.languagesPath}.json`;
+
+    return this.http
+      .get<{ statusCode: number; message: string; data: Language[] }>(path)
+      .pipe(
+        map((response) => {
+          return response.data;
+        }),
+        tap((languages) => {
+          this.languages = languages;
+          const storedLanguageCode = localStorage.getItem(
+            LanguageEnum.referenceKey,
+          );
+          const defaultLanguage =
+            languages.find(
+              (lang) => lang.language_code === storedLanguageCode,
+            ) || languages[0];
+
+          this.setLanguage(defaultLanguage);
+        }),
+        catchError((error) => {
+          this.notificationService.show(
+            NotificationTypeEnum.Error,
+            NotificationMessageEnum.ErrorFetchLanguage,
+          );
+          this.languages = [];
+          return of([]);
+        }),
+      );
   }
 
   getSelectedLanguage(): Observable<Language> {

@@ -1,6 +1,6 @@
 export const environment = {
   isProduction: false,
   api: {
-    domain: 'assets/json',
+    domain: 'http://localhost:3000',
   },
 };

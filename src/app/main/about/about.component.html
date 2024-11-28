@@ -85,7 +85,8 @@
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-300"
               >
-                {{ education.startDate }} - {{ education.endDate }}
+                {{ getYear(education.startDate) }} -
+                {{ getYear(education.endDate) }}
               </time>
               <h3
                 class="text-lg sm:text-xl font-semibold text-gray-700 dark:text-gray-50"
@@ -100,7 +101,7 @@
               <h3
                 class="text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-50"
               >
-                {{ education.field }}
+                {{ education.faculty }}
               </h3>
               <p
                 class="text-base sm:text-lg font-normal text-gray-500 dark:text-gray-300"

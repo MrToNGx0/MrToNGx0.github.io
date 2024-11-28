@@ -1,178 +1,180 @@
-[
-  {
-    "title": "E-Academy",
-    "description": "An online learning platform enabling users to track progress, issue certificates, and receive course reminders via Line. Built with Angular, ExpressJS, and Moodle.",
-    "banner_url": "https://e-academy.ditp.go.th/assets/e-academy/image/logo/logo_top.png",
-    "link": "https://e-academy.ditp.go.th/home",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "ExpressJS",
-        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
-      },
-      {
-        "label": "Bootstrap",
-        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
-      },
-      {
-        "label": "Angular Material",
-        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
-      },
-      {
-        "label": "Moodle",
-        "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png"
-      }
-    ]
-  },
-  {
-    "title": "E-Academy Backoffice",
-    "description": "A back-office system for managing data in E-Academy, including learning progress reports, adding/removing courses and instructors, tracking learner scores, and sending notifications via Line.",
-    "banner_url": "",
-    "link": "https://e-academy.ditp.go.th/backoffice/",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "ExpressJS",
-        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
-      },
-      {
-        "label": "Bootstrap",
-        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
-      },
-      {
-        "label": "Angular Material",
-        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
-      },
-      {
-        "label": "Messaging API",
-        "icon": "https://developers.line.biz/assets/img/products/messaging-api/p1.svg"
-      }
-    ]
-  },
-  {
-    "title": "Nea Chatbot",
-    "description": "A chatbot platform developed as a WebApp using NestJS and Python. Supports data training for improved response accuracy and flexibility.",
-    "banner_url": "https://nea.ditp.go.th/th/images/logo-nea.png",
-    "link": "https://e-academy.ditp.go.th/livechat/ui/chatbox",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "NestJS",
-        "icon": "https://nestjs.com/img/logo-small.svg"
-      },
-      {
-        "label": "PrimeNG",
-        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
-      },
-      {
-        "label": "Python",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-      },
-      {
-        "label": "Socket.IO",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
-      },
-      {
-        "label": "Strapi",
-        "icon": "https://strapi.io/assets/favicon-32x32.png"
-      }
-    ]
-  },
-  {
-    "title": "QSurvey",
-    "description": "A platform for tracking survey results with features like dashboard reporting, survey creation/deletion, and data export in Excel format.",
-    "banner_url": "https://nea.qsurve.convtech.app/assets/logo_qserve.png",
-    "link": "https://nea.qsurve.convtech.app/view/dashboard",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "PrimeNG",
-        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
-      },
-      {
-        "label": "NestJS",
-        "icon": "https://nestjs.com/img/logo-small.svg"
-      }
-    ]
-  },
-  {
-    "title": "QIM",
-    "description": "A CRM website for managing communication data via Webchat and Appchat, tracking agent activities, and summarizing operational results.",
-    "banner_url": "",
-    "link": "",
-    "skills": [
-      {
-        "label": "AngularJS",
-        "icon": "https://angularjs.org/img/ng-logo.png"
-      },
-      {
-        "label": "Bootstrap",
-        "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
-      },
-      {
-        "label": "ExpressJS",
-        "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
-      },
-      {
-        "label": "Socket.IO",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
-      }
-    ]
-  },
-  {
-    "title": "Isuzu Leasing",
-    "description": "A platform for managing OA work histories and tracking loan performance for Isuzu, with features for overall operational summaries.",
-    "banner_url": "",
-    "link": "",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "PrimeNG",
-        "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
-      },
-      {
-        "label": "Angular Material",
-        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
-      },
-      {
-        "label": "C#",
-        "icon": "https://marcuscode.com/media/21/marcuscode_XLgCGHrYlAfWpY2_1000.png"
-      }
-    ]
-  },
-  {
-    "title": "Portfolio",
-    "description": "A personal portfolio website showcasing personal information, work experience, projects completed, educational background, and contact methods.",
-    "banner_url": "",
-    "link": "https://mrtongx0.github.io/",
-    "skills": [
-      {
-        "label": "Angular",
-        "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
-      },
-      {
-        "label": "Tailwind",
-        "icon": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
-      },
-      {
-        "label": "Angular Material",
-        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
-      }
-    ]
-  }
-]
+{
+  "data": [
+    {
+      "title": "E-Academy",
+      "description": "An online learning platform enabling users to track progress, issue certificates, and receive course reminders via Line. Built with Angular, ExpressJS, and Moodle.",
+      "banner_url": "https://e-academy.ditp.go.th/assets/e-academy/image/logo/logo_top.png",
+      "link": "https://e-academy.ditp.go.th/home",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "ExpressJS",
+          "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+        },
+        {
+          "label": "Bootstrap",
+          "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+        },
+        {
+          "label": "Angular Material",
+          "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        },
+        {
+          "label": "Moodle",
+          "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png"
+        }
+      ]
+    },
+    {
+      "title": "E-Academy Backoffice",
+      "description": "A back-office system for managing data in E-Academy, including learning progress reports, adding/removing courses and instructors, tracking learner scores, and sending notifications via Line.",
+      "banner_url": "",
+      "link": "https://e-academy.ditp.go.th/backoffice/",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "ExpressJS",
+          "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+        },
+        {
+          "label": "Bootstrap",
+          "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+        },
+        {
+          "label": "Angular Material",
+          "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        },
+        {
+          "label": "Messaging API",
+          "icon": "https://developers.line.biz/assets/img/products/messaging-api/p1.svg"
+        }
+      ]
+    },
+    {
+      "title": "Nea Chatbot",
+      "description": "A chatbot platform developed as a WebApp using NestJS and Python. Supports data training for improved response accuracy and flexibility.",
+      "banner_url": "https://nea.ditp.go.th/th/images/logo-nea.png",
+      "link": "https://e-academy.ditp.go.th/livechat/ui/chatbox",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "NestJS",
+          "icon": "https://nestjs.com/img/logo-small.svg"
+        },
+        {
+          "label": "PrimeNG",
+          "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+        },
+        {
+          "label": "Python",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+        },
+        {
+          "label": "Socket.IO",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
+        },
+        {
+          "label": "Strapi",
+          "icon": "https://strapi.io/assets/favicon-32x32.png"
+        }
+      ]
+    },
+    {
+      "title": "QSurvey",
+      "description": "A platform for tracking survey results with features like dashboard reporting, survey creation/deletion, and data export in Excel format.",
+      "banner_url": "https://nea.qsurve.convtech.app/assets/logo_qserve.png",
+      "link": "https://nea.qsurve.convtech.app/view/dashboard",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "PrimeNG",
+          "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+        },
+        {
+          "label": "NestJS",
+          "icon": "https://nestjs.com/img/logo-small.svg"
+        }
+      ]
+    },
+    {
+      "title": "QIM",
+      "description": "A CRM website for managing communication data via Webchat and Appchat, tracking agent activities, and summarizing operational results.",
+      "banner_url": "",
+      "link": "",
+      "skills": [
+        {
+          "label": "AngularJS",
+          "icon": "https://angularjs.org/img/ng-logo.png"
+        },
+        {
+          "label": "Bootstrap",
+          "icon": "https://www.thaiall.com/java/bootstrap-stack.png"
+        },
+        {
+          "label": "ExpressJS",
+          "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png"
+        },
+        {
+          "label": "Socket.IO",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"
+        }
+      ]
+    },
+    {
+      "title": "Isuzu Leasing",
+      "description": "A platform for managing OA work histories and tracking loan performance for Isuzu, with features for overall operational summaries.",
+      "banner_url": "",
+      "link": "",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "PrimeNG",
+          "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1"
+        },
+        {
+          "label": "Angular Material",
+          "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        },
+        {
+          "label": "C#",
+          "icon": "https://marcuscode.com/media/21/marcuscode_XLgCGHrYlAfWpY2_1000.png"
+        }
+      ]
+    },
+    {
+      "title": "Portfolio",
+      "description": "A personal portfolio website showcasing personal information, work experience, projects completed, educational background, and contact methods.",
+      "banner_url": "",
+      "link": "https://mrtongx0.github.io/",
+      "skills": [
+        {
+          "label": "Angular",
+          "icon": "https://angular.io/assets/images/logos/angular/angular.svg"
+        },
+        {
+          "label": "Tailwind",
+          "icon": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+        },
+        {
+          "label": "Angular Material",
+          "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        }
+      ]
+    }
+  ]
+}

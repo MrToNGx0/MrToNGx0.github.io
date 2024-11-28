@@ -1,20 +1,22 @@
-[
-  {
-    "degree": "Bachelor's degree",
-    "faculty": "Industrial Education and Technology",
-    "major": "Electronic Technology",
-    "institute": "King Mongkut's Institute of Technology Ladkrabang",
-    "startDate": "01/01/2020",
-    "endDate": "01/01/2022",
-    "gpa": "3.38"
-  },
-  {
-    "degree": "High Vocational Certificate",
-    "faculty": "Electronics",
-    "major": "Industrial Electronics",
-    "institute": "Chachoengsao Technical College",
-    "startDate": "2018-01-01",
-    "endDate": "2020-01-01",
-    "gpa": "3.51"
-  }
-]
+{
+  "data": [
+    {
+      "degree": "Bachelor's degree",
+      "faculty": "Industrial Education and Technology",
+      "major": "Electronic Technology",
+      "institute": "King Mongkut's Institute of Technology Ladkrabang",
+      "startDate": "01/01/2020",
+      "endDate": "01/01/2022",
+      "gpa": "3.38"
+    },
+    {
+      "degree": "High Vocational Certificate",
+      "faculty": "Electronics",
+      "major": "Industrial Electronics",
+      "institute": "Chachoengsao Technical College",
+      "startDate": "2018-01-01",
+      "endDate": "2020-01-01",
+      "gpa": "3.51"
+    }
+  ]
+}

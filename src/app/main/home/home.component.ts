@@ -9,6 +9,11 @@ import { Title } from '@angular/platform-browser';
 import { ProfileService } from 'src/app/core/service/profile/profile.service';
 import { LanguageEnum } from 'src/app/shared/emun/language-enum';
 import { Project } from 'src/app/shared/interface/project.interface';
+import { NotificationService } from 'src/app/core/service/notification/notification.service';
+import {
+  NotificationMessageEnum,
+  NotificationTypeEnum,
+} from 'src/app/shared/emun/notification-enum';
 
 @Component({
   selector: 'app-home',
@@ -32,6 +37,7 @@ export class HomeComponent implements OnInit {
     private translate: TranslateService,
     private dialog: MatDialog,
     private titleService: Title,
+    private notificationService: NotificationService,
   ) {
     this.translate.get('nav.home').subscribe((tabName: string) => {
       this.titleService.setTitle(`MrToNG | ${tabName}`);
@@ -43,12 +49,24 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.languageService.getSelectedLanguage().subscribe(async (language) => {
       this.translate.setDefaultLang(language.language_code.toLowerCase());
-      this.profile = await this.profileService
-        .getProfile(language.language_code.toLowerCase())
-        .toPromise();
-      this.projects = await this.profileService
-        .getProject(language.language_code.toLowerCase())
-        .toPromise();
+      try {
+        const [resultProfile, resultProject] = await Promise.all([
+          this.profileService
+            .getProfile(language.language_code.toLowerCase())
+            .toPromise(),
+          this.profileService
+            .getProject(language.language_code.toLowerCase())
+            .toPromise(),
+        ]);
+
+        this.profile = resultProfile.data;
+        this.projects = resultProject.data;
+      } catch (error) {
+        this.notificationService.show(
+          NotificationTypeEnum.Error,
+          NotificationMessageEnum.ErrorInternalServer,
+        );
+      }
     });
   }
 

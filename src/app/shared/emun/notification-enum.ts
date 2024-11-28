@@ -12,5 +12,6 @@ export enum NotificationMessageEnum {
   ErrorUnauthorized = 'Unauthorized request',
   ErrorForbidden = 'Access is forbidden',
   ErrorNotFound = 'Resource not found',
-  ErrorInternalServer = 'Internal server error'
+  ErrorInternalServer = 'Internal server error',
+  ErrorFetchLanguage = 'Failed to load language data. Please try again later.',
 }

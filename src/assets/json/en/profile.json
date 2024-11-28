@@ -1,33 +1,35 @@
 {
-  "firstName": "Jukkrit",
-  "lastName": "Sukkha",
-  "nickname": "Tong",
-  "email": "tongsukkha@gmail.com",
-  "tel": "094-925-9906",
-  "location": "Bangkok, Thailand",
-  "jobPosition": "Software Developer (Full Stack)",
-  "avatarLink": "./assets/image/jukkrit_profile_1.jpeg",
-  "resumeLink": "./assets/file/resume_jukkrit_20240922.pdf",
-  "social": [
-    {
-      "label": "Facebook",
-      "icon": "./assets/icon/facebook.png",
-      "link": "https://web.facebook.com/MrToNGx0"
-    },
-    {
-      "label": "Instagram",
-      "icon": "./assets/icon/instagram.png",
-      "link": "https://www.instagram.com/_ttttttttttttttttttttong/"
-    },
-    {
-      "label": "Github",
-      "icon": "./assets/icon/github.png",
-      "link": "https://github.com/MrToNGx0"
-    },
-    {
-      "label": "Youtube",
-      "icon": "./assets/icon/youtube.png",
-      "link": "https://www.youtube.com/@mrtong8055"
-    }
-  ]
+  "data": {
+    "firstName": "Jukkrit",
+    "lastName": "Sukkha",
+    "nickname": "Tong",
+    "email": "tongsukkha@gmail.com",
+    "tel": "094-925-9906",
+    "location": "Bangkok, Thailand",
+    "jobPosition": "Software Developer (Full Stack)",
+    "avatarLink": "./assets/image/jukkrit_profile_1.jpeg",
+    "resumeLink": "./assets/file/resume_jukkrit_20240922.pdf",
+    "social": [
+      {
+        "label": "Facebook",
+        "icon": "./assets/icon/facebook.png",
+        "link": "https://web.facebook.com/MrToNGx0"
+      },
+      {
+        "label": "Instagram",
+        "icon": "./assets/icon/instagram.png",
+        "link": "https://www.instagram.com/_ttttttttttttttttttttong/"
+      },
+      {
+        "label": "Github",
+        "icon": "./assets/icon/github.png",
+        "link": "https://github.com/MrToNGx0"
+      },
+      {
+        "label": "Youtube",
+        "icon": "./assets/icon/youtube.png",
+        "link": "https://www.youtube.com/@mrtong8055"
+      }
+    ]
+  }
 }
