@@ -1,6 +1,8 @@
-[
-  "Certified in Programmable Graphical Control and Display (LabView)",
-  "Certified in Competition for Microcontroller Skills",
-  "Certified in Industrial Robotics Competition",
-  "Certified in Competition Robot ABU"
-]
+{
+  "data": [
+    "Certified in Programmable Graphical Control and Display (LabView)",
+    "Certified in Competition for Microcontroller Skills",
+    "Certified in Industrial Robotics Competition",
+    "Certified in Competition Robot ABU"
+  ]
+}
