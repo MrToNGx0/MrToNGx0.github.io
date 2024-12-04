@@ -125,6 +125,12 @@
       "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
       "link": "https://www.python.org/",
       "description": "Python is a high-level, interpreted programming language known for its easy-to-read syntax and versatility."
+    },
+    {
+      "label": "PostgreSQL",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png",
+      "link": "https://www.postgresql.org/",
+      "description": "PostgreSQL also known as Postgres, is a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance."
     }
   ]
 }

@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'src/app/core/service/language/language.service';
-import { NotificationService } from 'src/app/core/service/notification/notification.service';
-import { ProfileService } from 'src/app/core/service/profile/profile.service';
-import { LanguageEnum } from 'src/app/shared/emun/language-enum';
+import { LanguageService } from 'src/app/core/services/language/language.service';
+import { NotificationService } from 'src/app/core/services/notification/notification.service';
+import { ProfileService } from 'src/app/core/services/profile/profile.service';
 import {
-  NotificationMessageEnum,
-  NotificationTypeEnum,
-} from 'src/app/shared/emun/notification-enum';
-import { Profile } from 'src/app/shared/interface/profile.interface';
+  LOCAL_STORAGE_KEYS,
+  RESPONSE_TYPE,
+} from 'src/app/core/constants/constants';
+import { Profile } from 'src/app/core/models/profile.interface';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +19,6 @@ import { Profile } from 'src/app/shared/interface/profile.interface';
 export class ContactComponent implements OnInit {
   profile!: Profile;
   class = 'scale-[1.7]';
-  languageCode = '';
 
   faEnvelope = faEnvelope;
   faPhone = faPhone;
@@ -31,39 +29,29 @@ export class ContactComponent implements OnInit {
     private titleService: Title,
     private translate: TranslateService,
     private languageService: LanguageService,
-  ) {
-    this.translate.get('nav.contact').subscribe((tabName: string) => {
-      this.titleService.setTitle(`MrToNG | ${tabName}`);
-    });
-    this.languageCode =
-      localStorage.getItem(LanguageEnum.referenceKey)?.toLowerCase() ?? 'en';
-  }
+  ) {}
 
   ngOnInit(): void {
     this.languageService.getSelectedLanguage().subscribe(async (language) => {
+      this.translate.get('nav.contact').subscribe((tabName: string) => {
+        this.titleService.setTitle(`MrToNG | ${tabName}`);
+      });
+
       this.translate.setDefaultLang(language.language_code.toLowerCase());
+      const [resultProfile] = await Promise.all([
+        this.profileService
+          .getProfile(language.language_code.toLowerCase())
+          .toPromise(),
+      ]);
 
-      try {
-        const [resultProfile] = await Promise.all([
-          this.profileService
-            .getProfile(language.language_code.toLowerCase())
-            .toPromise(),
-        ]);
-
-        this.profile = resultProfile.data;
-      } catch (error) {
-        this.notificationService.show(
-          NotificationTypeEnum.Error,
-          NotificationMessageEnum.ErrorInternalServer,
-        );
-      }
+      this.profile = resultProfile.data;
     });
   }
 
   onClickCopy(input: string) {
     this.notificationService.show(
-      NotificationTypeEnum.Success,
-      NotificationMessageEnum.CopiedToClipboard,
+      RESPONSE_TYPE.Success,
+      'notification.message.copyToClipboard',
     );
     navigator.clipboard.writeText(input);
   }

@@ -5,6 +5,7 @@
       "description": "แพลตฟอร์มเรียนออนไลน์ที่ช่วยให้ผู้ใช้งานสามารถเก็บคะแนน ออกใบประกาศนียบัตร พร้อมการแจ้งเตือนการเรียนซ้ำผ่าน Line โดยพัฒนาด้วย Angular และ ExpressJS ร่วมกับ Moodle",
       "banner_url": "https://e-academy.ditp.go.th/assets/e-academy/image/logo/logo_top.png",
       "link": "https://e-academy.ditp.go.th/home",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -33,6 +34,7 @@
       "description": "ระบบหลังบ้านสำหรับจัดการข้อมูลใน E-Academy เช่น รายงานผลการเรียน การเพิ่ม/ลบหลักสูตรและวิทยากร ติดตามคะแนนผู้เรียน และการแจ้งเตือนผ่าน Line",
       "banner_url": "",
       "link": "https://e-academy.ditp.go.th/backoffice/",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -61,6 +63,7 @@
       "description": "แพลตฟอร์มตอบกลับอัตโนมัติด้วย Chatbot ที่พัฒนาด้วย WebApp ใช้ NestJS และ Python รองรับการเทรนข้อมูลเพื่อปรับปรุงการตอบสนอง เพิ่มความยืดหยุ่นในการใช้งาน",
       "banner_url": "https://nea.ditp.go.th/th/images/logo-nea.png",
       "link": "https://e-academy.ditp.go.th/livechat/ui/chatbox",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -93,6 +96,7 @@
       "description": "แพลตฟอร์มติดตามผลการทำแบบประเมิน พร้อมฟีเจอร์รายงานผลแบบ Dashboard การสร้าง/ลบแบบประเมิน และการ Export ข้อมูลในรูปแบบไฟล์ Excel",
       "banner_url": "https://nea.qsurve.convtech.app/assets/logo_qserve.png",
       "link": "https://nea.qsurve.convtech.app/view/dashboard",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -113,6 +117,7 @@
       "description": "เว็บไซต์ CRM สำหรับจัดการข้อมูลการสนทนาผ่าน Webchat และ Appchat พร้อมฟีเจอร์ติดตามการทำงานของ Agent และสรุปผลการทำงาน",
       "banner_url": "",
       "link": "",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -137,6 +142,7 @@
       "description": "แพลตฟอร์มจัดการข้อมูล ประวัติการทำงานของ OA และการติดตามผลสินเชื่อสำหรับ Isuzu พร้อมฟีเจอร์สรุปภาพรวมการทำงาน",
       "banner_url": "",
       "link": "",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -161,6 +167,7 @@
       "description": "เว็บไซต์แสดงผลงาน Portfolio ส่วนตัว แสดงข้อมูลส่วนตัว ประวัติการทำงาน โปรเจคที่เคยทำ ประวัติการศึกษาและช่องทางการติดต่อ",
       "banner_url": "",
       "link": "https://mrtongx0.github.io/",
+      "github_link": "https://github.com/MrToNGx0/MrToNGx0.github.io",
       "skills": [
         {
           "label": "Angular",
@@ -173,6 +180,23 @@
         {
           "label": "Angular Material",
           "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        }
+      ]
+    },
+    {
+      "title": "Portfolio Api",
+      "description": "API ที่ออกแบบมาเพื่อจัดการและจัดระเบียบข้อมูลเว็บไซต์ Portfolio ให้สามารถแก้ไขหรือเรียกข้อมูลได้ง่าย",
+      "banner_url": "",
+      "link": "",
+      "github_link": "https://github.com/MrToNGx0/portfolio-api",
+      "skills": [
+        {
+          "label": "NestJS",
+          "icon": "https://nestjs.com/img/logo-small.svg"
+        },
+        {
+          "label": "PostgreSQL",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png"
         }
       ]
     }

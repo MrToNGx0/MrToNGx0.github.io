@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { faLink, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'src/app/core/service/language/language.service';
+import { LanguageService } from 'src/app/core/services/language/language.service';
 import { RatingComponent } from 'src/app/shared/modal/rating/rating.component';
-import { Profile } from 'src/app/shared/interface/profile.interface';
+import { Profile } from 'src/app/core/models/profile.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
-import { ProfileService } from 'src/app/core/service/profile/profile.service';
-import { LanguageEnum } from 'src/app/shared/emun/language-enum';
-import { Project } from 'src/app/shared/interface/project.interface';
-import { NotificationService } from 'src/app/core/service/notification/notification.service';
-import {
-  NotificationMessageEnum,
-  NotificationTypeEnum,
-} from 'src/app/shared/emun/notification-enum';
+import { ProfileService } from 'src/app/core/services/profile/profile.service';
+import { Project } from 'src/app/core/models/project.interface';
+import { LOCAL_STORAGE_KEYS } from 'src/app/core/constants/constants';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -23,11 +19,11 @@ import {
 export class HomeComponent implements OnInit {
   profile!: Profile;
   class = 'scale-[1.7]';
-  languageCode = '';
   showRating = true;
 
   faLink = faLink;
   faShareSquare = faShareSquare;
+  faGithub = faGithub;
 
   projects: Project[] = [];
 
@@ -37,36 +33,26 @@ export class HomeComponent implements OnInit {
     private translate: TranslateService,
     private dialog: MatDialog,
     private titleService: Title,
-    private notificationService: NotificationService,
-  ) {
-    this.translate.get('nav.home').subscribe((tabName: string) => {
-      this.titleService.setTitle(`MrToNG | ${tabName}`);
-    });
-    this.languageCode =
-      localStorage.getItem(LanguageEnum.referenceKey)?.toLowerCase() ?? 'en';
-  }
+  ) {}
 
   ngOnInit(): void {
     this.languageService.getSelectedLanguage().subscribe(async (language) => {
-      this.translate.setDefaultLang(language.language_code.toLowerCase());
-      try {
-        const [resultProfile, resultProject] = await Promise.all([
-          this.profileService
-            .getProfile(language.language_code.toLowerCase())
-            .toPromise(),
-          this.profileService
-            .getProject(language.language_code.toLowerCase())
-            .toPromise(),
-        ]);
+      this.translate.get('nav.home').subscribe((tabName: string) => {
+        this.titleService.setTitle(`MrToNG | ${tabName}`);
+      });
 
-        this.profile = resultProfile.data;
-        this.projects = resultProject.data;
-      } catch (error) {
-        this.notificationService.show(
-          NotificationTypeEnum.Error,
-          NotificationMessageEnum.ErrorInternalServer,
-        );
-      }
+      this.translate.setDefaultLang(language.language_code.toLowerCase());
+      const [resultProfile, resultProject] = await Promise.all([
+        this.profileService
+          .getProfile(language.language_code.toLowerCase())
+          .toPromise(),
+        this.profileService
+          .getProject(language.language_code.toLowerCase())
+          .toPromise(),
+      ]);
+
+      this.profile = resultProfile.data;
+      this.projects = resultProject.data;
     });
   }
 

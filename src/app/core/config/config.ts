@@ -4,7 +4,7 @@ export const config = {
     profile: {
       subpath: '/profile',
       endpoint: {
-        profilePath: '/profile',
+        personalInformationPath: '/personalInformation',
         skillPath: '/skill',
         certificatePath: '/certificate',
         experiencePath: '/experience',

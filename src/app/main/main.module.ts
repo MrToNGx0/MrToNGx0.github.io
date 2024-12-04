@@ -19,17 +19,17 @@ import { ScrollToTopModule } from '../shared/component/scroll-to-top/scroll-to-t
           {
             path: 'home',
             loadChildren: () =>
-              import('./home/home.module').then(m => m.HomeModule),
+              import('./home/home.module').then((m) => m.HomeModule),
           },
           {
             path: 'about',
             loadChildren: () =>
-              import('./about/about.module').then(m => m.AboutModule),
+              import('./about/about.module').then((m) => m.AboutModule),
           },
           {
             path: 'contact',
             loadChildren: () =>
-              import('./contact/contact.module').then(m => m.ContactModule),
+              import('./contact/contact.module').then((m) => m.ContactModule),
           },
           {
             path: '**',

@@ -1,4 +1,6 @@
 {
+  "accept": "Accept",
+  "decline": "Decline",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -24,7 +26,26 @@
     "gpa": "GPA",
     "present": "Present"
   },
+  "cookie-consent": {
+    "message": "We use cookies to enhance your experience. By using our site, you consent to our use of cookies."
+  },
   "rating": {
     "title": "How was your experience?"
+  },
+  "notification": {
+    "type": {
+      "error": "Error",
+      "warning": "Warning",
+      "success": "Success"
+    },
+    "message": {
+      "copyToClipboard": "Copied to clipboard.",
+      "errorUnauthorized": "Unauthorized request.",
+      "errorForbidden": "Access is forbidden.",
+      "errorNotFound": "Resource not found.",
+      "errorInternalServer": "Internal server error.",
+      "errorOccurred": "An error occurred.",
+      "errorFetchLanguage": "Failed to fetch language data. Please try again later."
+    }
   }
 }

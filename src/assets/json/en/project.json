@@ -5,6 +5,7 @@
       "description": "An online learning platform enabling users to track progress, issue certificates, and receive course reminders via Line. Built with Angular, ExpressJS, and Moodle.",
       "banner_url": "https://e-academy.ditp.go.th/assets/e-academy/image/logo/logo_top.png",
       "link": "https://e-academy.ditp.go.th/home",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -33,6 +34,7 @@
       "description": "A back-office system for managing data in E-Academy, including learning progress reports, adding/removing courses and instructors, tracking learner scores, and sending notifications via Line.",
       "banner_url": "",
       "link": "https://e-academy.ditp.go.th/backoffice/",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -61,6 +63,7 @@
       "description": "A chatbot platform developed as a WebApp using NestJS and Python. Supports data training for improved response accuracy and flexibility.",
       "banner_url": "https://nea.ditp.go.th/th/images/logo-nea.png",
       "link": "https://e-academy.ditp.go.th/livechat/ui/chatbox",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -93,6 +96,7 @@
       "description": "A platform for tracking survey results with features like dashboard reporting, survey creation/deletion, and data export in Excel format.",
       "banner_url": "https://nea.qsurve.convtech.app/assets/logo_qserve.png",
       "link": "https://nea.qsurve.convtech.app/view/dashboard",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -113,6 +117,7 @@
       "description": "A CRM website for managing communication data via Webchat and Appchat, tracking agent activities, and summarizing operational results.",
       "banner_url": "",
       "link": "",
+      "github_link": "",
       "skills": [
         {
           "label": "AngularJS",
@@ -137,6 +142,7 @@
       "description": "A platform for managing OA work histories and tracking loan performance for Isuzu, with features for overall operational summaries.",
       "banner_url": "",
       "link": "",
+      "github_link": "",
       "skills": [
         {
           "label": "Angular",
@@ -161,6 +167,7 @@
       "description": "A personal portfolio website showcasing personal information, work experience, projects completed, educational background, and contact methods.",
       "banner_url": "",
       "link": "https://mrtongx0.github.io/",
+      "github_link": "https://github.com/MrToNGx0/MrToNGx0.github.io",
       "skills": [
         {
           "label": "Angular",
@@ -173,6 +180,23 @@
         {
           "label": "Angular Material",
           "icon": "https://material.angular.io/assets/img/favicons/favicon.ico"
+        }
+      ]
+    },
+    {
+      "title": "Portfolio API",
+      "description": "An API designed to manage and organize Portfolio website data so that it can be easily edited or retrieved.",
+      "banner_url": "",
+      "link": "",
+      "github_link": "https://github.com/MrToNGx0/portfolio-api",
+      "skills": [
+        {
+          "label": "NestJS",
+          "icon": "https://nestjs.com/img/logo-small.svg"
+        },
+        {
+          "label": "PostgreSQL",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png"
         }
       ]
     }

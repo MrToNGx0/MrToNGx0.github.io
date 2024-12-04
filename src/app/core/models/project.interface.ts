@@ -5,5 +5,6 @@ export interface Project {
   description: string;
   banner_url: string;
   link: string;
+  github_link: string;
   skills: Skill[];
 }

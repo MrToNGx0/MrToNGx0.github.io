@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from 'src/app/core/service/language/language.service';
-import { ListMenu, Language } from '../../interface/laguage.interface';
+import { LanguageService } from 'src/app/core/services/language/language.service';
+import { ListMenu, Language } from '../../../core/models/laguage.interface';
 import { faCloudMoon, faCloudSun } from '@fortawesome/free-solid-svg-icons';
-import { ThemeService } from 'src/app/core/service/theme/theme.service';
+import { ThemeService } from 'src/app/core/services/theme/theme.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { NAVBAR_MENUS } from 'src/app/core/constants/menu.constants';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  listMenu!: ListMenu[];
+  listMenu: ListMenu[] = NAVBAR_MENUS;
   languages!: Language[];
   isDarkMode!: boolean;
   isSelectLanguage!: Language;
@@ -41,10 +42,6 @@ export class NavbarComponent implements OnInit {
         this.isSelectLanguage = language;
       }
     });
-    this.initListMenu();
-    setTimeout(() => {
-      this.checkActiveLinks();
-    }, 0);
   }
 
   onSelectLanguage(language: Language): void {
@@ -57,36 +54,5 @@ export class NavbarComponent implements OnInit {
 
   isActive(routerLink: string): boolean {
     return this.router.isActive(routerLink, true);
-  }
-
-  checkActiveLinks(): void {
-    this.listMenu.forEach((item) => {
-      item.class = this.router.isActive(item.routerLink, true)
-        ? 'text-blue-600 dark:text-blue-400'
-        : 'text-gray-700 dark:text-gray-200';
-    });
-  }
-
-  initListMenu(): void {
-    this.listMenu = [
-      {
-        id: 1,
-        label: 'nav.home',
-        routerLink: 'home',
-        class: '',
-      },
-      {
-        id: 2,
-        label: 'nav.about',
-        routerLink: 'about',
-        class: '',
-      },
-      {
-        id: 3,
-        label: 'nav.contact',
-        routerLink: 'contact',
-        class: '',
-      },
-    ];
   }
 }

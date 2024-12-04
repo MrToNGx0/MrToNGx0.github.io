@@ -32,16 +32,23 @@ export class ScrollToTopComponent {
   }
 
   scrollToTop() {
-    const scrollStep = 1000;
+    const scrollStep = 30;
+    const currentScroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
 
-    const smoothScroll = () => {
-      const currentScroll =
-        document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.scrollTo(0, currentScroll - scrollStep);
-      }
-    };
+    if (currentScroll > 0) {
+      window.requestAnimationFrame(
+        this.smoothScroll.bind(this, currentScroll, scrollStep),
+      );
+    }
+  }
 
-    smoothScroll();
+  smoothScroll(currentScroll: number, scrollStep: number) {
+    if (currentScroll > 0) {
+      window.scrollTo(0, currentScroll - scrollStep);
+      window.requestAnimationFrame(
+        this.smoothScroll.bind(this, currentScroll - scrollStep, scrollStep),
+      );
+    }
   }
 }

@@ -108,25 +108,29 @@
       "link": "https://socket.io/",
       "description": "ไลบรารี JavaScript สำหรับแอปพลิเคชันเว็บเรียลไทม์ ที่รองรับการสื่อสารแบบสองทาง"
     },
-    [
-      {
-        "label": "Angular Material",
-        "icon": "https://material.angular.io/assets/img/favicons/favicon.ico",
-        "link": "https://material.angular.io/",
-        "description": "Angular Material คือห้องสมุดส่วนประกอบ UI สำหรับ Angular"
-      },
-      {
-        "label": "Moodle",
-        "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png",
-        "link": "https://moodle.org/",
-        "description": "Moodle คือแพลตฟอร์มการเรียนรู้ที่โอเพ่นซอร์ส ซึ่งถูกออกแบบมาเพื่อให้ผู้สอน ผู้ดูแล และนักเรียนสามารถสร้างสิ่งแวดล้อมการเรียนรู้ที่ปรับแต่งได้"
-      },
-      {
-        "label": "Python",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-        "link": "https://www.python.org/",
-        "description": "Python เป็นภาษาการเขียนโปรแกรมที่มีระดับสูงและตีความได้ง่าย ซึ่งเป็นที่นิยมในหลากหลายสาขา"
-      }
-    ]
+    {
+      "label": "Angular Material",
+      "icon": "https://material.angular.io/assets/img/favicons/favicon.ico",
+      "link": "https://material.angular.io/",
+      "description": "Angular Material คือห้องสมุดส่วนประกอบ UI สำหรับ Angular"
+    },
+    {
+      "label": "Moodle",
+      "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png",
+      "link": "https://moodle.org/",
+      "description": "Moodle คือแพลตฟอร์มการเรียนรู้ที่โอเพ่นซอร์ส ซึ่งถูกออกแบบมาเพื่อให้ผู้สอน ผู้ดูแล และนักเรียนสามารถสร้างสิ่งแวดล้อมการเรียนรู้ที่ปรับแต่งได้"
+    },
+    {
+      "label": "Python",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "link": "https://www.python.org/",
+      "description": "Python เป็นภาษาการเขียนโปรแกรมที่มีระดับสูงและตีความได้ง่าย ซึ่งเป็นที่นิยมในหลากหลายสาขา"
+    },
+    {
+      "label": "PostgreSQL",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png",
+      "link": "https://www.postgresql.org/",
+      "description": "โพสต์เกรสคิวเอล (PostgreSQL) หรือนิยมเรียกว่า โพสต์เกรส (Postgres) เป็นระบบจัดการฐานข้อมูลในลักษณะของซอฟต์แวร์เสรีภายใต้สัญญาอนุญาตบีเอสดี"
+    }
   ]
 }

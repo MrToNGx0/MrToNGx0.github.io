@@ -15,7 +15,7 @@ export class ProfileService {
     endpoint: string,
     language?: string,
   ): string {
-    if (environment.isProduction) {
+    if (!environment.isMockUp) {
       return language
         ? `${environment.api.domain}${subpath}${endpoint}?language=${language}`
         : `${environment.api.domain}${subpath}${endpoint}`;
@@ -29,7 +29,7 @@ export class ProfileService {
   getProfile(language: string): Observable<any> {
     const url = this.getDataUrl(
       config.api.profile.subpath,
-      config.api.profile.endpoint.profilePath,
+      config.api.profile.endpoint.personalInformationPath,
       language,
     );
     return this.http.get<any>(url);

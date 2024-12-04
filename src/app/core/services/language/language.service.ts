@@ -1,26 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
-import { config } from '../../config/config';
-import { Language } from 'src/app/shared/interface/laguage.interface';
-import { LanguageEnum } from 'src/app/shared/emun/language-enum';
+import { Language } from 'src/app/core/models/laguage.interface';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from '../notification/notification.service';
 import {
-  NotificationMessageEnum,
-  NotificationTypeEnum,
-} from 'src/app/shared/emun/notification-enum';
+  API_ENDPOINTS,
+  DEFAULT_LANGUAGE,
+  LOCAL_STORAGE_KEYS,
+  RESPONSE_TYPE,
+} from 'src/app/core/constants/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LanguageService {
-  private isSelectLanguageSubject = new BehaviorSubject<Language>({
-    id: 1,
-    language_code: 'EN',
-    language_name: 'English',
-    picture_url: './assets/icon/united-kingdom.png',
-  });
+  private isSelectLanguageSubject = new BehaviorSubject<Language>(
+    DEFAULT_LANGUAGE,
+  );
   public isSelectLanguage$: Observable<Language> =
     this.isSelectLanguageSubject.asObservable();
   public languages: Language[] = [];
@@ -31,20 +28,18 @@ export class LanguageService {
   ) {}
 
   loadLanguages(): Observable<Language[]> {
-    const path = environment.isProduction
-      ? `${environment.api.domain}${config.api.language.subpath}${config.api.language.endpoint.languagesPath}`
-      : `assets/json${config.api.language.endpoint.languagesPath}.json`;
+    const path = !environment.isMockUp
+      ? `${environment.api.domain}${API_ENDPOINTS.languagePath}`
+      : API_ENDPOINTS.languageJsonPath;
 
     return this.http
       .get<{ statusCode: number; message: string; data: Language[] }>(path)
       .pipe(
-        map((response) => {
-          return response.data;
-        }),
+        map((response) => response.data),
         tap((languages) => {
           this.languages = languages;
           const storedLanguageCode = localStorage.getItem(
-            LanguageEnum.referenceKey,
+            LOCAL_STORAGE_KEYS.LANGUAGE_REFERENCE_KEY,
           );
           const defaultLanguage =
             languages.find(
@@ -55,8 +50,8 @@ export class LanguageService {
         }),
         catchError((error) => {
           this.notificationService.show(
-            NotificationTypeEnum.Error,
-            NotificationMessageEnum.ErrorFetchLanguage,
+            RESPONSE_TYPE.Error,
+            'notification.message.errorFetchLanguage',
           );
           this.languages = [];
           return of([]);
@@ -69,7 +64,10 @@ export class LanguageService {
   }
 
   setLanguage(language: Language): void {
-    localStorage.setItem(LanguageEnum.referenceKey, language.language_code);
+    localStorage.setItem(
+      LOCAL_STORAGE_KEYS.LANGUAGE_REFERENCE_KEY,
+      language.language_code,
+    );
     this.isSelectLanguageSubject.next(language);
   }
 }

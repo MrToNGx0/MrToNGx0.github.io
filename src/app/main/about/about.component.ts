@@ -5,18 +5,14 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'src/app/core/service/language/language.service';
-import { NotificationService } from 'src/app/core/service/notification/notification.service';
-import { ProfileService } from 'src/app/core/service/profile/profile.service';
-import { LanguageEnum } from 'src/app/shared/emun/language-enum';
-import {
-  NotificationMessageEnum,
-  NotificationTypeEnum,
-} from 'src/app/shared/emun/notification-enum';
-import { Education } from 'src/app/shared/interface/education.interface';
-import { Experience } from 'src/app/shared/interface/experience.interface';
-import { Profile } from 'src/app/shared/interface/profile.interface';
-import { Skill } from 'src/app/shared/interface/skill.interface';
+import { LanguageService } from 'src/app/core/services/language/language.service';
+import { NotificationService } from 'src/app/core/services/notification/notification.service';
+import { ProfileService } from 'src/app/core/services/profile/profile.service';
+import { LOCAL_STORAGE_KEYS } from 'src/app/core/constants/constants';
+import { Education } from 'src/app/core/models/education.interface';
+import { Experience } from 'src/app/core/models/experience.interface';
+import { Profile } from 'src/app/core/models/profile.interface';
+import { Skill } from 'src/app/core/models/skill.interface';
 
 @Component({
   selector: 'app-about',
@@ -29,7 +25,6 @@ export class AboutComponent implements OnInit {
   experiences: Experience[] = [];
   educations: Education[] = [];
   totalDuration!: string;
-  languageCode = '';
   sliderOffset = 0;
   slideWidth = 250 + 24;
 
@@ -42,45 +37,36 @@ export class AboutComponent implements OnInit {
     private translate: TranslateService,
     private languageService: LanguageService,
     private notificationService: NotificationService,
-  ) {
-    this.translate.get('nav.about').subscribe((tabName: string) => {
-      this.titleService.setTitle(`MrToNG | ${tabName}`);
-    });
-    this.languageCode =
-      localStorage.getItem(LanguageEnum.referenceKey)?.toLowerCase() ?? 'en';
-  }
+  ) {}
 
   ngOnInit(): void {
     this.languageService.getSelectedLanguage().subscribe(async (language) => {
+      this.translate.get('nav.about').subscribe((tabName: string) => {
+        this.titleService.setTitle(`MrToNG | ${tabName}`);
+      });
+
       this.translate.setDefaultLang(language.language_code.toLowerCase());
+      const [resultProfile, resultSkill, resultExperience, resultEducation] =
+        await Promise.all([
+          this.profileService
+            .getProfile(language.language_code.toLowerCase())
+            .toPromise(),
+          this.profileService
+            .getSkill(language.language_code.toLowerCase())
+            .toPromise(),
+          this.profileService
+            .getExperience(language.language_code.toLowerCase())
+            .toPromise(),
+          this.profileService
+            .getEducation(language.language_code.toLowerCase())
+            .toPromise(),
+        ]);
 
-      try {
-        const [resultProfile, resultSkill, resultExperience, resultEducation] =
-          await Promise.all([
-            this.profileService
-              .getProfile(language.language_code.toLowerCase())
-              .toPromise(),
-            this.profileService
-              .getSkill(language.language_code.toLowerCase())
-              .toPromise(),
-            this.profileService
-              .getExperience(language.language_code.toLowerCase())
-              .toPromise(),
-            this.profileService
-              .getEducation(language.language_code.toLowerCase())
-              .toPromise(),
-          ]);
+      this.profile = resultProfile.data;
+      this.skills = resultSkill.data;
+      this.experiences = resultExperience.data;
+      this.educations = resultEducation.data;
 
-        this.profile = resultProfile.data;
-        this.skills = resultSkill.data;
-        this.experiences = resultExperience.data;
-        this.educations = resultEducation.data;
-      } catch (error) {
-        this.notificationService.show(
-          NotificationTypeEnum.Error,
-          NotificationMessageEnum.ErrorInternalServer,
-        );
-      }
       this.calculateDurations();
       this.calculateTotalDuration();
     });

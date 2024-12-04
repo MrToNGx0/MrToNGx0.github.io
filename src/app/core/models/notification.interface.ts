@@ -1,15 +1,14 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { NotificationTypeEnum, NotificationMessageEnum } from '../emun/notification-enum';
 
 export interface NotificationIcon {
-  label: NotificationTypeEnum;
+  label: string;
   icon: IconDefinition;
   class: string;
 }
 
 export interface Notification {
   icon: IconDefinition;
-  message: NotificationMessageEnum;
+  message: string;
   class: string;
   [key: string]: any;
 }
