@@ -1,110 +1,136 @@
-[
-  {
-    "label": "HTML",
-    "icon": "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    "description": "ภาษาเครื่องหมายมาตรฐานสำหรับการสร้างเว็บเพจและแอปพลิเคชัน"
-  },
-  {
-    "label": "Angular",
-    "icon": "https://platri.de/wp-content/uploads/2024/01/Angular-Framework-e1649312852136.png",
-    "link": "https://angular.io/",
-    "description": "แพลตฟอร์มและเฟรมเวิร์กสำหรับการสร้างแอปพลิเคชันลูกค้าฝั่งเดียวที่ใช้ HTML และ TypeScript"
-  },
-  {
-    "label": "CSS",
-    "icon": "https://delta-dev-software.fr/wp-content/uploads/2024/05/CSS-Logo.png",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    "description": "ภาษาในการจัดรูปแบบลักษณะการแสดงผลของเอกสารที่เขียนด้วย HTML"
-  },
-  {
-    "label": "Bootstrap",
-    "icon": "https://www.thaiall.com/java/bootstrap-stack.png",
-    "link": "https://getbootstrap.com/",
-    "description": "เฟรมเวิร์กสำหรับการพัฒนาเว็บไซต์ที่ตอบสนองและรองรับมือถือเป็นหลัก"
-  },
-  {
-    "label": "PrimeNG",
-    "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1",
-    "link": "https://www.primefaces.org/primeng/",
-    "description": "ชุดคอมโพเนนต์ UI ที่ครบครันสำหรับ Angular"
-  },
-  {
-    "label": "Tailwind",
-    "icon": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
-    "link": "https://tailwindcss.com/",
-    "description": "เฟรมเวิร์ก CSS ที่เน้นการใช้งานแบบ utility-first สำหรับการสร้างดีไซน์ที่ปรับแต่งได้อย่างรวดเร็ว"
-  },
-  {
-    "label": "TypeScript",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-    "link": "https://www.typescriptlang.org/",
-    "description": "ภาษาโปรแกรมที่มีการกำหนดประเภทที่เข้มงวดและพัฒนาบน JavaScript"
-  },
-  {
-    "label": "JavaScript",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    "description": "ภาษาโปรแกรมที่เบาและถูกตีความหรือคอมไพล์ในระหว่างเวลาในการพัฒนาเว็บ"
-  },
-  {
-    "label": "C#",
-    "icon": "https://marcuscode.com/media/21/marcuscode_XLgCGHrYlAfWpY2_1000.png",
-    "link": "https://learn.microsoft.com/en-us/dotnet/csharp/",
-    "description": "ภาษาโปรแกรมที่เป็นวัตถุประสงค์ที่ทันสมัย พัฒนาโดย Microsoft"
-  },
-  {
-    "label": "NestJS",
-    "icon": "https://nestjs.com/img/logo-small.svg",
-    "link": "https://nestjs.com/",
-    "description": "เฟรมเวิร์ก Node.js ที่พัฒนาให้มีประสิทธิภาพสูงและสามารถขยายตัวได้สำหรับแอปพลิเคชันฝั่งเซิร์ฟเวอร์"
-  },
-  {
-    "label": "ExpressJS",
-    "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png",
-    "link": "https://expressjs.com/",
-    "description": "เฟรมเวิร์กที่รวดเร็วและเรียบง่ายสำหรับ Node.js"
-  },
-  {
-    "label": "MySQL",
-    "icon": "https://pbs.twimg.com/profile_images/1255113654049128448/J5Yt92WW_400x400.png",
-    "link": "https://www.mysql.com/",
-    "description": "ระบบการจัดการฐานข้อมูลเชิงสัมพันธ์แบบโอเพ่นซอร์ส"
-  },
-  {
-    "label": "MariaDB",
-    "icon": "https://yt3.googleusercontent.com/ytc/AIdro_neLC1vOawbx6PzPr-p4E22Y41OBvz9XfggF1FF76dUVno=s900-c-k-c0x00ffffff-no-rj",
-    "link": "https://mariadb.org/",
-    "description": "ฐานข้อมูลที่พัฒนาต่อจาก MySQL โดยชุมชนโอเพ่นซอร์ส"
-  },
-  {
-    "label": "GitHub",
-    "icon": "https://www.webfx.com/wp-content/uploads/2022/08/github-logo.png",
-    "link": "https://github.com/",
-    "description": "แพลตฟอร์มสำหรับการควบคุมเวอร์ชันและการทำงานร่วมกันโดยใช้ Git"
-  },
-  {
-    "label": "Docker",
-    "icon": "https://avatars.githubusercontent.com/u/5429470?s=280&v=4",
-    "link": "https://www.docker.com/",
-    "description": "แพลตฟอร์มสำหรับการพัฒนา การจัดส่ง และการรันแอปพลิเคชันในคอนเทนเนอร์"
-  },
-  {
-    "label": "Messaging API",
-    "icon": "https://developers.line.biz/assets/img/products/messaging-api/p1.svg",
-    "link": "https://developers.line.biz/en/docs/messaging-api/",
-    "description": "แพลตฟอร์มสำหรับการสร้างแอปพลิเคชันส่งข้อความพร้อมสื่อมัลติมีเดียและฟีเจอร์การโต้ตอบ"
-  },
-  {
-    "label": "Strapi",
-    "icon": "https://strapi.io/assets/favicon-32x32.png",
-    "link": "https://strapi.io/",
-    "description": "CMS แบบ headless โอเพ่นซอร์สสำหรับการสร้าง API"
-  },
-  {
-    "label": "Socket.IO",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
-    "link": "https://socket.io/",
-    "description": "ไลบรารี JavaScript สำหรับแอปพลิเคชันเว็บเรียลไทม์ ที่รองรับการสื่อสารแบบสองทาง"
-  }
-]
+{
+  "data": [
+    {
+      "label": "HTML",
+      "icon": "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "description": "ภาษาเครื่องหมายมาตรฐานสำหรับการสร้างเว็บเพจและแอปพลิเคชัน"
+    },
+    {
+      "label": "Angular",
+      "icon": "https://platri.de/wp-content/uploads/2024/01/Angular-Framework-e1649312852136.png",
+      "link": "https://angular.io/",
+      "description": "แพลตฟอร์มและเฟรมเวิร์กสำหรับการสร้างแอปพลิเคชันลูกค้าฝั่งเดียวที่ใช้ HTML และ TypeScript"
+    },
+    {
+      "label": "CSS",
+      "icon": "https://delta-dev-software.fr/wp-content/uploads/2024/05/CSS-Logo.png",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "description": "ภาษาในการจัดรูปแบบลักษณะการแสดงผลของเอกสารที่เขียนด้วย HTML"
+    },
+    {
+      "label": "Bootstrap",
+      "icon": "https://www.thaiall.com/java/bootstrap-stack.png",
+      "link": "https://getbootstrap.com/",
+      "description": "เฟรมเวิร์กสำหรับการพัฒนาเว็บไซต์ที่ตอบสนองและรองรับมือถือเป็นหลัก"
+    },
+    {
+      "label": "PrimeNG",
+      "icon": "https://i0.wp.com/www.primefaces.org/wp-content/uploads/2016/10/primeng.png?ssl=1",
+      "link": "https://www.primefaces.org/primeng/",
+      "description": "ชุดคอมโพเนนต์ UI ที่ครบครันสำหรับ Angular"
+    },
+    {
+      "label": "Tailwind",
+      "icon": "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+      "link": "https://tailwindcss.com/",
+      "description": "เฟรมเวิร์ก CSS ที่เน้นการใช้งานแบบ utility-first สำหรับการสร้างดีไซน์ที่ปรับแต่งได้อย่างรวดเร็ว"
+    },
+    {
+      "label": "TypeScript",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+      "link": "https://www.typescriptlang.org/",
+      "description": "ภาษาโปรแกรมที่มีการกำหนดประเภทที่เข้มงวดและพัฒนาบน JavaScript"
+    },
+    {
+      "label": "JavaScript",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "description": "ภาษาโปรแกรมที่เบาและถูกตีความหรือคอมไพล์ในระหว่างเวลาในการพัฒนาเว็บ"
+    },
+    {
+      "label": "C#",
+      "icon": "https://marcuscode.com/media/21/marcuscode_XLgCGHrYlAfWpY2_1000.png",
+      "link": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+      "description": "ภาษาโปรแกรมที่เป็นวัตถุประสงค์ที่ทันสมัย พัฒนาโดย Microsoft"
+    },
+    {
+      "label": "NestJS",
+      "icon": "https://nestjs.com/img/logo-small.svg",
+      "link": "https://nestjs.com/",
+      "description": "เฟรมเวิร์ก Node.js ที่พัฒนาให้มีประสิทธิภาพสูงและสามารถขยายตัวได้สำหรับแอปพลิเคชันฝั่งเซิร์ฟเวอร์"
+    },
+    {
+      "label": "ExpressJS",
+      "icon": "https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png",
+      "link": "https://expressjs.com/",
+      "description": "เฟรมเวิร์กที่รวดเร็วและเรียบง่ายสำหรับ Node.js"
+    },
+    {
+      "label": "MySQL",
+      "icon": "https://pbs.twimg.com/profile_images/1255113654049128448/J5Yt92WW_400x400.png",
+      "link": "https://www.mysql.com/",
+      "description": "ระบบการจัดการฐานข้อมูลเชิงสัมพันธ์แบบโอเพ่นซอร์ส"
+    },
+    {
+      "label": "MariaDB",
+      "icon": "https://yt3.googleusercontent.com/ytc/AIdro_neLC1vOawbx6PzPr-p4E22Y41OBvz9XfggF1FF76dUVno=s900-c-k-c0x00ffffff-no-rj",
+      "link": "https://mariadb.org/",
+      "description": "ฐานข้อมูลที่พัฒนาต่อจาก MySQL โดยชุมชนโอเพ่นซอร์ส"
+    },
+    {
+      "label": "GitHub",
+      "icon": "https://www.webfx.com/wp-content/uploads/2022/08/github-logo.png",
+      "link": "https://github.com/",
+      "description": "แพลตฟอร์มสำหรับการควบคุมเวอร์ชันและการทำงานร่วมกันโดยใช้ Git"
+    },
+    {
+      "label": "Docker",
+      "icon": "https://avatars.githubusercontent.com/u/5429470?s=280&v=4",
+      "link": "https://www.docker.com/",
+      "description": "แพลตฟอร์มสำหรับการพัฒนา การจัดส่ง และการรันแอปพลิเคชันในคอนเทนเนอร์"
+    },
+    {
+      "label": "Messaging API",
+      "icon": "https://developers.line.biz/assets/img/products/messaging-api/p1.svg",
+      "link": "https://developers.line.biz/en/docs/messaging-api/",
+      "description": "แพลตฟอร์มสำหรับการสร้างแอปพลิเคชันส่งข้อความพร้อมสื่อมัลติมีเดียและฟีเจอร์การโต้ตอบ"
+    },
+    {
+      "label": "Strapi",
+      "icon": "https://strapi.io/assets/favicon-32x32.png",
+      "link": "https://strapi.io/",
+      "description": "CMS แบบ headless โอเพ่นซอร์สสำหรับการสร้าง API"
+    },
+    {
+      "label": "Socket.IO",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+      "link": "https://socket.io/",
+      "description": "ไลบรารี JavaScript สำหรับแอปพลิเคชันเว็บเรียลไทม์ ที่รองรับการสื่อสารแบบสองทาง"
+    },
+    {
+      "label": "Angular Material",
+      "icon": "https://material.angular.io/assets/img/favicons/favicon.ico",
+      "link": "https://material.angular.io/",
+      "description": "Angular Material คือห้องสมุดส่วนประกอบ UI สำหรับ Angular"
+    },
+    {
+      "label": "Moodle",
+      "icon": "https://w7.pngwing.com/pngs/961/976/png-transparent-moodle-android-educational-icon-thumbnail.png",
+      "link": "https://moodle.org/",
+      "description": "Moodle คือแพลตฟอร์มการเรียนรู้ที่โอเพ่นซอร์ส ซึ่งถูกออกแบบมาเพื่อให้ผู้สอน ผู้ดูแล และนักเรียนสามารถสร้างสิ่งแวดล้อมการเรียนรู้ที่ปรับแต่งได้"
+    },
+    {
+      "label": "Python",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "link": "https://www.python.org/",
+      "description": "Python เป็นภาษาการเขียนโปรแกรมที่มีระดับสูงและตีความได้ง่าย ซึ่งเป็นที่นิยมในหลากหลายสาขา"
+    },
+    {
+      "label": "PostgreSQL",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png",
+      "link": "https://www.postgresql.org/",
+      "description": "โพสต์เกรสคิวเอล (PostgreSQL) หรือนิยมเรียกว่า โพสต์เกรส (Postgres) เป็นระบบจัดการฐานข้อมูลในลักษณะของซอฟต์แวร์เสรีภายใต้สัญญาอนุญาตบีเอสดี"
+    }
+  ]
+}

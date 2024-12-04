@@ -1,6 +1,6 @@
 export interface Education {
   degree: string;
-  field: string;
+  faculty: string;
   major: string;
   institute: string;
   startDate: string;

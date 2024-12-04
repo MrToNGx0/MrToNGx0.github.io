@@ -4,42 +4,46 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpErrorResponse
+  HttpErrorResponse,
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { NotificationService } from '../../service/notification/notification.service';
-import { NotificationMessageEnum, NotificationTypeEnum } from 'src/app/shared/emun/notification-enum';
+import { NotificationService } from '../../services/notification/notification.service';
+import { RESPONSE_TYPE } from 'src/app/core/constants/constants';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-
   constructor(private notificationService: NotificationService) {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler,
+  ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((err: HttpErrorResponse) => {
-        let message: NotificationMessageEnum;
+        let message: string;
+
+        console.log(1);
 
         switch (err.status) {
           case 401:
-            message = NotificationMessageEnum.ErrorUnauthorized;
+            message = 'notification.message.errorUnauthorized';
             break;
           case 403:
-            message = NotificationMessageEnum.ErrorForbidden;
+            message = 'notification.message.errorForbidden';
             break;
           case 404:
-            message = NotificationMessageEnum.ErrorNotFound;
+            message = 'notification.message.errorNotFound';
             break;
           case 500:
-            message = NotificationMessageEnum.ErrorInternalServer;
+            message = 'notification.message.errorInternalServer';
             break;
           default:
-            message = NotificationMessageEnum.ErrorOccurred;
+            message = 'notification.message.errorOccurred';
         }
 
-        this.notificationService.show(NotificationTypeEnum.Error, message);
+        this.notificationService.show(RESPONSE_TYPE.Error, message);
         return throwError(err);
-      })
+      }),
     );
   }
 }

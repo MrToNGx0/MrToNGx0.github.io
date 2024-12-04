@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { NotificationService } from 'src/app/core/service/notification/notification.service';
-import { Notification } from '../../interface/notification.interface';
+import { NotificationService } from 'src/app/core/services/notification/notification.service';
+import { Notification } from '../../../core/models/notification.interface';
 
 @Component({
   selector: 'app-notification',

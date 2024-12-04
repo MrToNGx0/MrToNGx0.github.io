@@ -1,6 +1,7 @@
 export const environment = {
   isProduction: false,
+  isMockUp: true,
   api: {
-    domain: 'assets/json',
+    domain: 'http://localhost:3000',
   },
 };

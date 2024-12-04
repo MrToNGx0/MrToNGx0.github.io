@@ -1,6 +1,7 @@
 export const environment = {
-  isProduction: true,
-  api : {
-    domain: ''
-  }
+  isProduction: false,
+  isMockUp: false,
+  api: {
+    domain: '',
+  },
 };
